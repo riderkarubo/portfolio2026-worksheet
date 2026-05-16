@@ -301,6 +301,115 @@
     margin-top: 8px; font-style: italic;
   }
 
+  /* ============ CANDIDATE RANK CARD (S1専用) ============ */
+  .rank-section {
+    margin: 22px 0 10px;
+  }
+  .rank-section-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 10px;
+    padding: 4px 10px; display: inline-block; border-radius: 3px;
+  }
+  .rank-section-title.high { background: var(--green); color: #fff; }
+  .rank-section-title.mid { background: var(--gold); color: #fff; }
+  .rank-section-title.low { background: var(--ink-mute); color: #fff; }
+  .rank-section-note {
+    font-size: 12px; color: var(--ink-mute);
+    margin-bottom: 12px; font-style: italic;
+  }
+
+  .cand-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 10px 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .cand-card.high { border-left: 4px solid var(--green); }
+  .cand-card.mid { border-left: 4px solid var(--gold); }
+  .cand-card.low { border-left: 4px solid var(--ink-mute); }
+  .cand-confirmed { border-left: 4px solid var(--accent); background: var(--accent-soft); }
+
+  .cand-head {
+    display: flex; align-items: baseline; gap: 10px;
+    margin-bottom: 8px; flex-wrap: wrap;
+  }
+  .cand-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 700; font-size: 13px;
+    background: var(--paper-line); color: var(--ink);
+    padding: 2px 8px; border-radius: 3px;
+  }
+  .cand-rank {
+    font-size: 13px;
+  }
+  .cand-title {
+    font-weight: 700; color: var(--ink);
+    font-size: 14.5px;
+  }
+  .cand-meta {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 4px 12px;
+    font-size: 12.5px;
+    margin-top: 6px;
+  }
+  .cand-meta dt {
+    color: var(--ink-mute); font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .cand-meta dd { color: var(--ink-soft); }
+  .cand-meta dd .risk-low { color: var(--green); font-weight: 700; }
+  .cand-meta dd .risk-mid { color: var(--gold); font-weight: 700; }
+  .cand-meta dd .risk-high { color: var(--red); font-weight: 700; }
+  .cand-oneliner {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: var(--paper);
+    border-left: 2px solid var(--accent);
+    font-size: 12.5px; color: var(--ink-soft);
+    font-style: italic;
+  }
+  .cand-warn {
+    margin-top: 6px; font-size: 12px;
+    color: var(--red); font-weight: 600;
+  }
+
+  /* おすすめ組合せ案 */
+  .combo-block {
+    margin: 22px 0 10px;
+    padding: 16px 20px;
+    background: var(--accent-soft);
+    border-radius: 4px;
+  }
+  .combo-block h4 {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .combo-item {
+    margin: 8px 0;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  .combo-item strong { color: var(--accent); }
+  .combo-item .combo-seq {
+    font-family: 'Courier New', monospace;
+    font-weight: 700; color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .combo-item .combo-pros {
+    color: var(--green); font-size: 12px; margin-top: 3px;
+  }
+  .combo-item .combo-cons {
+    color: var(--ink-mute); font-size: 12px; margin-top: 2px;
+  }
+
+  /* TOP RECOVERY BAR */
   /* ============ TOP RECOVERY BAR ============ */
   .top-recovery {
     max-width: 760px; margin: 30px auto 0;
@@ -416,7 +525,7 @@
       <span class="progress-dot done" id="dot-s3"></span>
       <span class="progress-dot done" id="dot-b2"></span>
       <span class="progress-dot done" id="dot-a2"></span>
-      <span class="progress-dot" id="dot-s1"></span>
+      <span class="progress-dot wip" id="dot-s1"></span>
       <span class="progress-dot" id="dot-s2"></span>
       <span class="progress-dot" id="dot-b1"></span>
       <span class="progress-dot" id="dot-ef"></span>
@@ -454,7 +563,7 @@
     <a class="toc-item" href="#s3"><span class="toc-num">01</span><span class="toc-tag">S3</span><span class="toc-label">By the Numbers — 数字の棚卸し</span><span class="toc-status done">✓ 完了</span></a>
     <a class="toc-item" href="#b2"><span class="toc-num">02</span><span class="toc-tag">B2</span><span class="toc-label">Niche Identity — 1行の自分宣言</span><span class="toc-status done">✓ 完了</span></a>
     <a class="toc-item" href="#a2"><span class="toc-num">03</span><span class="toc-tag">A2</span><span class="toc-label">Career Arc — 16年を3〜4章に</span><span class="toc-status done">✓ 完了</span></a>
-    <a class="toc-item" href="#s1"><span class="toc-num">04</span><span class="toc-tag">S1</span><span class="toc-label">Decisions I Made — 私が下した判断</span><span class="toc-status">— 未着手</span></a>
+    <a class="toc-item" href="#s1"><span class="toc-num">04</span><span class="toc-tag">S1</span><span class="toc-label">Decisions I Made — 私が下した判断</span><span class="toc-status">— TOP2確定 / 3-5位選定中</span></a>
     <a class="toc-item" href="#s2"><span class="toc-num">05</span><span class="toc-tag">S2</span><span class="toc-label">Bets &amp; Pivots — 賭けと撤退</span><span class="toc-status">— 未着手</span></a>
     <a class="toc-item" href="#b1"><span class="toc-num">06</span><span class="toc-tag">B1</span><span class="toc-label">Leadership Philosophy — 仕事観の核</span><span class="toc-status">— 未着手</span></a>
     <a class="toc-item" href="#ef"><span class="toc-num">07</span><span class="toc-tag">EF</span><span class="toc-label">External Feedback — 他者から見た自分（NEW）</span><span class="toc-status">— 未着手</span></a>
@@ -781,31 +890,251 @@
   </p>
 
   <div class="material">
-    <div class="material-label">候補12件（抽出済み）</div>
-    <ul>
-      <li><strong>D1.</strong> LiveShop! ゼロイチ立ち上げ — 外注依存ではなく自社完結方針を選択</li>
-      <li><strong>D2.</strong> Firework Creative Team 事業責任者就任 — 「制作受託」から「P/L責任を持つ事業」へ再定義</li>
-      <li><strong>D3.</strong> Jリーグルヴァンカップ Facebook Live 3社協業 — 前例少ない協業フォーマットを企画</li>
-      <li><strong>D4.</strong> ちゃんみな PRINCESS PROJECT — ワンオペで企画〜編集完遂</li>
-      <li><strong>D5.</strong> MCCM 6,897人配信タイトル誤記事故 → 検証ルールをスキル化</li>
-      <li><strong>D6.</strong> MCCM 2026年度目標値を3段階で交渉着地（6,500→7,000→7,500人）</li>
-      <li><strong>D7.</strong> 「70分以内縛り」独自KPI設計 — 配信時間バイアス分析手法を確立</li>
-      <li><strong>D8.</strong> MCCM主KPI/全体KPI 両立構造の提案 — 競合4社比較から発見</li>
-      <li><strong>D9.</strong> Asics案件 段階提案戦略（概算→詳細）</li>
-      <li><strong>D10.</strong> ロレアル・プラダ案件「代理店リプレイス狙い」2パターン同時提案</li>
-      <li><strong>D11.</strong> コープこうべ「分析より施策」リソース配分判断</li>
-      <li><strong>D12.</strong> マンチェス案件「試作プラン¥120K」入口戦略 — 期待値ギャップ防止</li>
-      <li><strong>D13.</strong> <strong>スケーラブルなPS設計への着手</strong> — 「自走プラン1年サポート vs 5年伴走パターン」を同じ一定金額でペイできる料金体系を設計（FY25 Annual で開発目標として明示）</li>
-      <li><strong>D14.</strong> <strong>Annual Feedbackを受けて社内に制度提案</strong> — 評価制度・キャリアパスについて自ら制度設計を提案（FY25 Annual メモ末尾）</li>
-    </ul>
+    <div class="material-label">✅ 確定済み TOP2</div>
+    <div class="cand-card cand-confirmed">
+      <div class="cand-head">
+        <span class="cand-id">D2</span>
+        <span class="cand-rank">🥇 1位</span>
+        <span class="cand-title">Firework Creative Team 事業責任者就任</span>
+      </div>
+      <div>「制作受託」から「P/L責任を持つ事業」へ再定義</div>
+      <div class="cand-meta">
+        <dt>採用基準</dt><dd>Drove a decision ◎ / 起業家精神 ◎ / ゼロイチ ◎ — 全て該当</dd>
+      </div>
+    </div>
+    <div class="cand-card cand-confirmed">
+      <div class="cand-head">
+        <span class="cand-id">D1</span>
+        <span class="cand-rank">🥈 2位</span>
+        <span class="cand-title">LiveShop! ゼロイチ立ち上げ</span>
+      </div>
+      <div>外注依存ではなく自社完結方針を選択</div>
+      <div class="cand-meta">
+        <dt>採用基準</dt><dd>ゼロイチ ◎ / Courage ◎</dd>
+      </div>
+    </div>
   </div>
 
   <div class="q-block">
     <div class="q-label">Question 1</div>
-    <div class="q-text">12個の候補のうち、ポートフォリオに載せるTOP3〜5は？</div>
-    <div class="hint">推薦: 大型1件（D1 or D2）+ クライアント案件2件 + 戦略設計1件のバランス</div>
+    <div class="q-text">残り12候補から 3-5位を選ぶ（下のランク表から取捨選択）</div>
+    <div class="hint">⭐⭐⭐ 高推薦5件 / ⭐⭐ 中推薦4件 / ⭐ 低推薦3件 にランク分け済み。下部にオススメ組合せ4案も用意。</div>
+
+    <!-- ====== 高推薦 5件 ====== -->
+    <div class="rank-section">
+      <span class="rank-section-title high">⭐⭐⭐ 高推薦（5件）</span>
+      <div class="rank-section-note">既出ブロックとの接続性が強い、または独自性で際立つ候補</div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D13</span>
+          <span class="cand-title">スケーラブルなPS設計への着手</span>
+        </div>
+        <div>「自走プラン1年サポート」と「5年伴走パターン」を同じ一定金額でペイできる料金体系を設計（FY25 Annual で開発目標として明示）</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / 起業家精神 ◎ / 事業設計力 ◎</dd>
+          <dt>既出連動</dt><dd><strong>Firework IMPACT「粗利+15%」の構造的根拠</strong> — 数字との対応最強</dd>
+          <dt>公開リスク</dt><dd><span class="risk-low">低</span> — 料金体系の思想だけ抽象化すれば社外公開OK</dd>
+          <dt>物語</dt><dd>「単価上げてもいいから受託のまま」vs「内製化支援に振る」のトレードオフを乗り越えた</dd>
+        </dl>
+        <div class="cand-oneliner">「Firework IMPACT の数字の裏側」として最強の接続性</div>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D7</span>
+          <span class="cand-title">「70分以内縛り」独自KPI設計</span>
+        </div>
+        <div>配信時間バイアス分析手法を独自設計、AI×WORK 15h→2h の起点（後にdelivery-analysisスキル化）</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / 独自手法設計 ◎ / AI活用 ◎</dd>
+          <dt>既出連動</dt><dd><strong>AI×WORKブロック「15h→2h」の起点</strong> — 数字との対応最強</dd>
+          <dt>公開リスク</dt><dd><span class="risk-low">低</span> — 手法の存在は語れる、クライアント名は伏せ可能</dd>
+          <dt>物語</dt><dd>「配信時間が長いほど見られる」という業界バイアスへの反証</dd>
+        </dl>
+        <div class="cand-oneliner">「AI×WORK の起源ストーリー」として独自性最強</div>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D6</span>
+          <span class="cand-title">MCCM 2026年度目標値 3段階交渉着地</span>
+        </div>
+        <div>6,500 → 7,000 → 7,500人で着地、クライアント・本社両方と交渉</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / Courage ◎ / クライアントワーク ◎</dd>
+          <dt>既出連動</dt><dd>クライアントワーク原則の体現（MCCMはWORKSにロゴ掲載済み）</dd>
+          <dt>公開リスク</dt><dd><span class="risk-mid">中</span> — 具体数字 6,500/7,000/7,500 の公開可否要確認</dd>
+          <dt>物語</dt><dd>クライアント側「最初は6,500で十分」/ 本社側「もっと高く設定すべき」の板挟みから着地</dd>
+        </dl>
+        <div class="cand-oneliner">「揉めた相手いる案件」枠の本命、ただし数字伏字 vs 公開の判断必要</div>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D14</span>
+          <span class="cand-title">Annual Feedback後の社内制度提案</span>
+        </div>
+        <div>評価制度・キャリアパスについて自ら制度設計を提案（FY25 Annual メモ末尾）</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>起業家精神 ◎ / Self-Coaching哲学の外側展開 ◎</dd>
+          <dt>既出連動</dt><dd><strong>Self-Coachingブロック「自分を経営する哲学」の組織版</strong></dd>
+          <dt>公開リスク</dt><dd><span class="risk-mid">中</span> — 提案内容の具体は伏せ、提案した事実だけ語れる</dd>
+          <dt>物語</dt><dd>評価される側から制度を提案する側への逆転</dd>
+        </dl>
+        <div class="cand-oneliner">「自分を経営する哲学」が組織にも向く証拠として希少</div>
+        <div class="cand-warn">⚠️ 要確認：構想止まりではなく、実際に動いた提案として書ける？</div>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D8</span>
+          <span class="cand-title">MCCM主KPI/全体KPI 両立構造の提案</span>
+        </div>
+        <div>競合4社比較から発見、単一KPIではなく階層構造で両立を実現</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / 戦略フレーム設計力 ◎</dd>
+          <dt>既出連動</dt><dd>クライアントワークの「フレーム提案」例</dd>
+          <dt>公開リスク</dt><dd><span class="risk-mid">中</span> — 競合4社の言及・MCCM内部KPI構造の公開可否要確認</dd>
+          <dt>物語</dt><dd>単一KPIで全てを判断する文化への問題提起</dd>
+        </dl>
+        <div class="cand-oneliner">戦略コンサル的フレーム力の証明、ただしD6との重複感あり</div>
+      </div>
+    </div>
+
+    <!-- ====== 中推薦 4件 ====== -->
+    <div class="rank-section">
+      <span class="rank-section-title mid">⭐⭐ 中推薦（4件）</span>
+      <div class="rank-section-note">手堅いが既出ブロックとの接続性 or 独自性で一段落ちる</div>
+
+      <div class="cand-card mid">
+        <div class="cand-head">
+          <span class="cand-id">D10</span>
+          <span class="cand-title">ロレアル・プラダ案件「代理店リプレイス狙い」2パターン同時提案</span>
+        </div>
+        <div>既存代理店から仕事を奪う戦略を明示しつつ2パターン提示</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>起業家精神 ◎ / Drove a decision ○</dd>
+          <dt>公開リスク</dt><dd><span class="risk-high">高</span> — 「代理店リプレイス狙い」表現は要伏字、結果未確定なら語れない</dd>
+        </dl>
+        <div class="cand-oneliner">結果次第。受注前なら書きづらい</div>
+      </div>
+
+      <div class="cand-card mid">
+        <div class="cand-head">
+          <span class="cand-id">D11</span>
+          <span class="cand-title">コープこうべ「分析より施策」リソース配分判断</span>
+        </div>
+        <div>分析工数を削って施策実行に振った判断</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ○ / リソース最適化 ○</dd>
+          <dt>公開リスク</dt><dd><span class="risk-low">低</span> — 社内判断の話、社名は出してOK</dd>
+        </dl>
+        <div class="cand-oneliner">地味だが「Drove a decision」素材として手堅い。インパクト弱め</div>
+      </div>
+
+      <div class="cand-card mid">
+        <div class="cand-head">
+          <span class="cand-id">D12</span>
+          <span class="cand-title">マンチェス案件「試作プラン¥120K」入口戦略</span>
+        </div>
+        <div>いきなり大型契約を狙わず、低価格試作で期待値ギャップを防ぐ入口戦略</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>起業家精神 ○ / Drove a decision ○</dd>
+          <dt>既出連動</dt><dd>スケーラブルPS設計（D13）の前哨戦</dd>
+          <dt>公開リスク</dt><dd><span class="risk-mid">中</span> — 具体金額 ¥120K の公開可否要確認</dd>
+        </dl>
+        <div class="cand-oneliner">D13と方向性が似ている。両方は冗長か</div>
+      </div>
+
+      <div class="cand-card mid">
+        <div class="cand-head">
+          <span class="cand-id">D9</span>
+          <span class="cand-title">Asics案件 段階提案戦略（概算→詳細）</span>
+        </div>
+        <div>概算で握ってから詳細を詰める段階的アプローチ</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ○ / クライアントワーク ○</dd>
+          <dt>既出連動</dt><dd>Asicsはクライアント名（WORKS掲載済み）</dd>
+          <dt>公開リスク</dt><dd><span class="risk-low">低</span> — 手法の話、社名は出してOK</dd>
+        </dl>
+        <div class="cand-oneliner">戦略としては優秀だが、独自性は弱い（一般的な営業手法）</div>
+      </div>
+    </div>
+
+    <!-- ====== 低推薦 3件 ====== -->
+    <div class="rank-section">
+      <span class="rank-section-title low">⭐ 低推薦（3件）</span>
+      <div class="rank-section-note">S1（Decisions）には不向き、別セクション向きまたは優先度低</div>
+
+      <div class="cand-card low">
+        <div class="cand-head">
+          <span class="cand-id">D3</span>
+          <span class="cand-title">Jリーグルヴァンカップ Facebook Live 3社協業</span>
+        </div>
+        <div>前例少ない協業フォーマットを企画</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>ゼロイチ ◎ / 起業家精神 ○</dd>
+        </dl>
+        <div class="cand-oneliner">過去すぎる（2018前後？）。D1のLiveShop!時代に被る。一段優先度低</div>
+      </div>
+
+      <div class="cand-card low">
+        <div class="cand-head">
+          <span class="cand-id">D4</span>
+          <span class="cand-title">ちゃんみな PRINCESS PROJECT</span>
+        </div>
+        <div>ワンオペで企画〜編集完遂</div>
+        <div class="cand-oneliner">「Decision」の物語というより「実行力」の話。S1には不向き、別セクション向き</div>
+      </div>
+
+      <div class="cand-card low">
+        <div class="cand-head">
+          <span class="cand-id">D5</span>
+          <span class="cand-title">MCCM 6,897人配信タイトル誤記事故 → 検証ルールをスキル化</span>
+        </div>
+        <div>自分のミスを再発防止スキルに昇華</div>
+        <div class="cand-oneliner">S1「Decision」より <strong>S2「Bets &amp; Pivots」の素材として強い</strong>。S2に回すのを推奨</div>
+      </div>
+    </div>
+
+    <!-- ====== オススメ組み合わせ ====== -->
+    <div class="combo-block">
+      <h4>🎯 オススメ組み合わせ（参考）</h4>
+
+      <div class="combo-item">
+        <strong>案① 既出ブロック全裏付け型（5件）</strong>
+        <div class="combo-seq">D2 → D1 → D13 → D7 → D14</div>
+        <div class="combo-pros">+ Firework IMPACT / AI×WORK / Self-Coaching の3ブロックと完全対応</div>
+        <div class="combo-cons">- クライアント案件ゼロは弱点</div>
+      </div>
+
+      <div class="combo-item">
+        <strong>案② バランス型（5件）</strong>
+        <div class="combo-seq">D2 → D1 → D13 → D7 → D6</div>
+        <div class="combo-pros">+ 戦略設計 + 独自手法 + クライアント交渉のバランス</div>
+        <div class="combo-cons">- D14（Self-Coaching組織版）が抜ける弱点</div>
+      </div>
+
+      <div class="combo-item">
+        <strong>案③ ミニマル（3件）</strong>
+        <div class="combo-seq">D2 → D1 → D13</div>
+        <div class="combo-pros">+ Firework集中、他セクションに余白</div>
+        <div class="combo-cons">- 物語の数が少ない</div>
+      </div>
+
+      <div class="combo-item">
+        <strong>案④ Courage強調（4件）</strong>
+        <div class="combo-seq">D2 → D1 → D6 → D14</div>
+        <div class="combo-pros">+ 「揉めた相手いた」軸で統一</div>
+        <div class="combo-cons">- 数字との直接的接続は弱まる</div>
+      </div>
+    </div>
+
+    <div class="hint">取捨選択時の問い：①公開リスク許容度 / ②D14は実際に動いた？ / ③クライアント案件は何件入れたい？ / ④5件にこだわる必要ある？</div>
+
     <div class="answer empty">
-      <span class="answer-label">Answer</span>
+      <span class="answer-label">Answer（最終確定の3-5位を書き込む）</span>
     </div>
   </div>
 
@@ -828,8 +1157,8 @@
   </div>
 
   <div class="status-row">
-    <span class="badge empty">UNTOUCHED</span>
-    <span class="timestamp">last update: —</span>
+    <span class="badge wip">IN PROGRESS</span>
+    <span class="timestamp">last update: 2026-05-16 / TOP2確定・3-5位選定中</span>
   </div>
 </section>
 
