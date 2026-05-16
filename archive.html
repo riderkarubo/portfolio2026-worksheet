@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>石島慎也 — Portfolio 素材アーカイブ（旧worksheet全資料）</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-mute: #8a8a8a;
+    --paper: #fafaf7;
+    --paper-line: #efeee9;
+    --accent: #d97757;
+    --accent-soft: #f5e9e2;
+    --green: #6b8e4e;
+    --green-soft: #e8efe0;
+    --gold: #c89b3c;
+    --gold-soft: #f7eed8;
+    --red: #c25a5a;
+    --red-soft: #f4dede;
+    --rule: #e4e2da;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', system-ui, sans-serif;
+    background: var(--paper);
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px);
+    background-size: 100% 32px;
+    color: var(--ink);
+    line-height: 1.85;
+    font-size: 15px;
+    padding-bottom: 120px;
+  }
+
+  /* ============ HEADER ============ */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250, 250, 247, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 40px 14px;
+  }
+  .head-row {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 880px; margin: 0 auto;
+  }
+  .head-title {
+    font-size: 17px; font-weight: 700; letter-spacing: 0.02em;
+  }
+  .head-title small {
+    font-size: 12px; font-weight: 400; color: var(--ink-mute);
+    margin-left: 10px;
+  }
+  .progress-wrap {
+    display: flex; gap: 4px; align-items: center;
+  }
+  .progress-dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: #ddd; border: 1.5px solid #ccc;
+  }
+  .progress-dot.done { background: var(--green); border-color: var(--green); }
+  .progress-dot.wip { background: var(--gold); border-color: var(--gold); }
+  .progress-text {
+    margin-left: 10px; font-size: 12px; color: var(--ink-mute);
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ============ INTRO ============ */
+  .intro {
+    max-width: 760px; margin: 60px auto 30px;
+    padding: 0 40px;
+  }
+  .intro h1 {
+    font-size: 32px; font-weight: 700; letter-spacing: -0.01em;
+    margin-bottom: 20px; line-height: 1.3;
+  }
+  .intro h1 .marker {
+    background: linear-gradient(transparent 65%, var(--accent-soft) 65%);
+    padding: 0 2px;
+  }
+  .intro p {
+    color: var(--ink-soft); font-size: 15px; margin-bottom: 14px;
+  }
+  .meta {
+    font-size: 12px; color: var(--ink-mute);
+    font-family: 'Courier New', monospace;
+    margin-top: 24px; padding-top: 16px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  /* ============ TOC ============ */
+  .toc {
+    max-width: 760px; margin: 40px auto;
+    padding: 24px 32px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .toc-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+    color: var(--ink-mute); margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .toc-list { display: flex; flex-direction: column; gap: 4px; }
+  .toc-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 6px 0;
+    text-decoration: none; color: var(--ink);
+    font-size: 14px;
+    border-bottom: 1px dotted transparent;
+  }
+  .toc-item:hover {
+    border-bottom-color: var(--ink-mute);
+  }
+  .toc-num {
+    font-family: 'Courier New', monospace;
+    font-size: 12px; color: var(--ink-mute);
+    min-width: 30px;
+  }
+  .toc-label { flex: 1; }
+  .toc-tag {
+    font-size: 10px; padding: 2px 7px;
+    background: var(--paper-line); color: var(--ink-mute);
+    border-radius: 10px; font-family: 'Courier New', monospace;
+    letter-spacing: 0.05em;
+  }
+  .toc-status {
+    font-size: 11px; color: var(--ink-mute);
+    font-family: 'Courier New', monospace;
+  }
+  .toc-status.done { color: var(--green); font-weight: 700; }
+  .toc-status.wip { color: var(--gold); font-weight: 700; }
+
+  /* ============ SECTION ============ */
+  section {
+    max-width: 760px; margin: 80px auto 0;
+    padding: 0 40px;
+  }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .sec-num {
+    font-family: 'Courier New', monospace;
+    font-size: 13px; font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .sec-title {
+    font-size: 24px; font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+  .sec-subtitle {
+    margin-left: auto;
+    font-size: 11px; color: var(--ink-mute);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .sec-aim {
+    color: var(--ink-soft); font-size: 14px;
+    margin: 12px 0 28px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent-soft);
+  }
+
+  /* ============ QUESTION BLOCK ============ */
+  .q-block {
+    margin: 28px 0;
+  }
+  .q-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .q-text {
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .q-text::before {
+    content: 'Q. '; color: var(--accent); font-weight: 700;
+  }
+
+  /* ============ MATERIAL CHIPS ============ */
+  .material {
+    background: var(--green-soft);
+    border-left: 3px solid var(--green);
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 3px 3px 0;
+    font-size: 13.5px;
+  }
+  .material-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--green); text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .material ul {
+    list-style: none; padding-left: 0;
+  }
+  .material li {
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.7;
+  }
+  .material li::before {
+    content: '◆';
+    position: absolute; left: 0; top: 3px;
+    color: var(--green); font-size: 10px;
+  }
+  .material strong { color: var(--ink); }
+
+  /* ============ ANSWER BLOCK ============ */
+  .answer {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    min-height: 70px;
+    position: relative;
+  }
+  .answer.empty {
+    background: repeating-linear-gradient(
+      transparent, transparent 27px,
+      var(--paper-line) 27px, var(--paper-line) 28px
+    );
+    border-style: dashed;
+  }
+  .answer.empty::before {
+    content: '（ここに対話で固まった内容を書き込みます）';
+    color: var(--ink-mute); font-size: 13px;
+    font-style: italic;
+  }
+  .answer-label {
+    position: absolute; top: -9px; left: 14px;
+    background: var(--paper); padding: 0 8px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--ink-mute); text-transform: uppercase;
+  }
+  .answer.empty .answer-label {
+    color: var(--ink-mute);
+  }
+  .answer.done {
+    border-color: var(--green);
+    background: #fff;
+  }
+  .answer.done .answer-label {
+    color: var(--green);
+  }
+  .answer.wip {
+    border-color: var(--gold);
+  }
+  .answer.wip .answer-label {
+    color: var(--gold);
+  }
+
+  /* ============ STATUS BADGE ============ */
+  .status-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em;
+    font-family: 'Courier New', monospace;
+  }
+  .badge.empty { background: #eee; color: var(--ink-mute); }
+  .badge.wip { background: var(--gold-soft); color: var(--gold); }
+  .badge.done { background: var(--green-soft); color: var(--green); }
+  .timestamp {
+    color: var(--ink-mute); font-size: 11px;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ============ NOTE / CALLOUT ============ */
+  .note {
+    margin: 16px 0;
+    padding: 10px 14px;
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 3px 3px 0;
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .note strong { color: var(--gold); }
+
+  /* ============ HINT ============ */
+  .hint {
+    font-size: 12px; color: var(--ink-mute);
+    margin-top: 8px; font-style: italic;
+  }
+
+  /* ============ FINAL COPY (骨子) ============ */
+  .final-copy {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin: 20px 0 16px;
+    position: relative;
+  }
+  .final-copy::before {
+    content: '📌 ポートフォリオ最終形（公開する骨子）';
+    position: absolute; top: -11px; left: 18px;
+    background: var(--accent); color: #fff;
+    padding: 3px 12px; border-radius: 3px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  }
+  .final-copy h3 {
+    font-size: 14px; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.04em;
+    margin: 18px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .final-copy h3:first-of-type { margin-top: 4px; }
+  .final-copy .copy-block {
+    margin: 10px 0 18px;
+  }
+  .final-copy .copy-note {
+    font-size: 12.5px; color: var(--ink-soft);
+    background: var(--paper); padding: 8px 12px;
+    border-left: 2px solid var(--accent-soft);
+    border-radius: 0 3px 3px 0;
+    margin: 8px 0;
+  }
+  .final-copy .copy-tbd {
+    display: inline-block;
+    padding: 2px 8px; font-size: 11px;
+    background: var(--gold-soft); color: var(--gold);
+    border-radius: 3px; font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  /* Stats card grid (S3最終形) */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .stat-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .stat-card .stat-num {
+    font-size: 24px; font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+    display: block;
+  }
+  .stat-card .stat-num.tbd { color: var(--gold); font-size: 18px; }
+  .stat-card .stat-label {
+    font-size: 12px; color: var(--ink); margin-top: 6px;
+    line-height: 1.3;
+  }
+  .stat-card .stat-sub {
+    font-size: 10px; color: var(--ink-mute); margin-top: 3px;
+    line-height: 1.3;
+  }
+
+  /* ============ MEMO / IDEA FOLD ============ */
+  .material-fold {
+    margin: 14px 0;
+    background: var(--paper);
+    border: 1px dashed var(--rule);
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .material-fold summary {
+    cursor: pointer;
+    padding: 12px 18px;
+    list-style: none;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12.5px;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .material-fold summary:hover { background: var(--paper-line); }
+  .material-fold summary::-webkit-details-marker { display: none; }
+  .material-fold .fold-icon {
+    color: var(--ink-mute); font-size: 10px;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .material-fold[open] .fold-icon { transform: rotate(90deg); }
+  .material-fold .fold-label {
+    font-weight: 700; color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+  .material-fold .fold-meta {
+    margin-left: auto; color: var(--ink-mute); font-size: 11px;
+    font-style: italic;
+  }
+  .material-fold > *:not(summary) {
+    padding: 0 18px 14px;
+  }
+  .material-fold .material {
+    margin: 14px 18px;
+  }
+
+  /* ============ CANDIDATE RANK CARD (S1専用) ============ */
+  .rank-section {
+    margin: 22px 0 10px;
+  }
+  .rank-section-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 10px;
+    padding: 4px 10px; display: inline-block; border-radius: 3px;
+  }
+  .rank-section-title.high { background: var(--green); color: #fff; }
+  .rank-section-title.mid { background: var(--gold); color: #fff; }
+  .rank-section-title.low { background: var(--ink-mute); color: #fff; }
+  .rank-section-note {
+    font-size: 12px; color: var(--ink-mute);
+    margin-bottom: 12px; font-style: italic;
+  }
+
+  .cand-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 10px 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .cand-card.high { border-left: 4px solid var(--green); }
+  .cand-card.mid { border-left: 4px solid var(--gold); }
+  .cand-card.low { border-left: 4px solid var(--ink-mute); }
+  .cand-confirmed { border-left: 4px solid var(--accent); background: var(--accent-soft); }
+
+  .cand-head {
+    display: flex; align-items: baseline; gap: 10px;
+    margin-bottom: 8px; flex-wrap: wrap;
+  }
+  .cand-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 700; font-size: 13px;
+    background: var(--paper-line); color: var(--ink);
+    padding: 2px 8px; border-radius: 3px;
+  }
+  .cand-rank {
+    font-size: 13px;
+  }
+  .cand-title {
+    font-weight: 700; color: var(--ink);
+    font-size: 14.5px;
+  }
+  .cand-meta {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 4px 12px;
+    font-size: 12.5px;
+    margin-top: 6px;
+  }
+  .cand-meta dt {
+    color: var(--ink-mute); font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .cand-meta dd { color: var(--ink-soft); }
+  .cand-meta dd .risk-low { color: var(--green); font-weight: 700; }
+  .cand-meta dd .risk-mid { color: var(--gold); font-weight: 700; }
+  .cand-meta dd .risk-high { color: var(--red); font-weight: 700; }
+  .cand-oneliner {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: var(--paper);
+    border-left: 2px solid var(--accent);
+    font-size: 12.5px; color: var(--ink-soft);
+    font-style: italic;
+  }
+  .cand-warn {
+    margin-top: 6px; font-size: 12px;
+    color: var(--red); font-weight: 600;
+  }
+
+  /* おすすめ組合せ案 */
+  .combo-block {
+    margin: 22px 0 10px;
+    padding: 16px 20px;
+    background: var(--accent-soft);
+    border-radius: 4px;
+  }
+  .combo-block h4 {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .combo-item {
+    margin: 8px 0;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  .combo-item strong { color: var(--accent); }
+  .combo-item .combo-seq {
+    font-family: 'Courier New', monospace;
+    font-weight: 700; color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .combo-item .combo-pros {
+    color: var(--green); font-size: 12px; margin-top: 3px;
+  }
+  .combo-item .combo-cons {
+    color: var(--ink-mute); font-size: 12px; margin-top: 2px;
+  }
+
+  /* TOP RECOVERY BAR */
+  /* ============ TOP RECOVERY BAR ============ */
+  .top-recovery {
+    max-width: 760px; margin: 30px auto 0;
+    padding: 16px 28px;
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 3px 3px 0;
+    font-size: 13.5px;
+  }
+  .top-recovery strong { color: var(--accent); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    max-width: 760px; margin: 100px auto 0;
+    padding: 30px 40px;
+    border-top: 1px dashed var(--rule);
+    font-size: 12px; color: var(--ink-mute);
+    text-align: center;
+  }
+
+  /* ============ FEEDBACK CARD（External Feedback専用） ============ */
+  .feedback-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    font-size: 13.5px;
+  }
+  .feedback-source {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--ink-mute); text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .feedback-score-row {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin: 10px 0;
+  }
+  .score-chip {
+    display: inline-flex; align-items: baseline; gap: 6px;
+    padding: 4px 10px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    font-size: 12px;
+  }
+  .score-chip .label { color: var(--ink-soft); }
+  .score-chip .num {
+    font-family: 'Courier New', monospace;
+    font-weight: 700; color: var(--ink);
+  }
+  .score-chip.high .num { color: var(--green); }
+  .score-chip.mid .num { color: var(--gold); }
+  .score-chip.low .num { color: var(--red); }
+  .feedback-quote {
+    margin: 12px 0 4px;
+    padding: 8px 14px;
+    background: var(--paper);
+    border-radius: 3px;
+    font-size: 13px; color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .feedback-quote::before { content: '「'; color: var(--ink-mute); }
+  .feedback-quote::after { content: '」'; color: var(--ink-mute); }
+
+  /* ============ TABLE ============ */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 8px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  th {
+    font-size: 11px; color: var(--ink-mute);
+    font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  td strong { color: var(--ink); font-weight: 700; }
+
+  /* ============ ANCHOR ============ */
+  .anchor {
+    position: relative; top: -70px;
+    visibility: hidden;
+  }
+
+  @media (max-width: 720px) {
+    .intro, .toc, section, .top-recovery, footer { padding-left: 24px; padding-right: 24px; }
+    .head-title small { display: none; }
+    .sec-title { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="head-row">
+    <div class="head-title">
+      📦 アーカイブ：旧ワークシート全資料
+      <small>石島慎也 / 検討プロセス・非公開素材を含む参考用ページ</small>
+    </div>
+    <div class="progress-wrap">
+      <span class="progress-dot wip" id="dot-s3"></span>
+      <span class="progress-dot done" id="dot-b2"></span>
+      <span class="progress-dot done" id="dot-a2"></span>
+      <span class="progress-dot wip" id="dot-s1"></span>
+      <span class="progress-dot wip" id="dot-s2"></span>
+      <span class="progress-dot wip" id="dot-b1"></span>
+      <span class="progress-dot wip" id="dot-ef"></span>
+      <span class="progress-dot wip" id="dot-a3"></span>
+      <span class="progress-dot done" id="dot-b3"></span>
+      <span class="progress-dot wip" id="dot-a1"></span>
+      <span class="progress-text">3/10 done</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<div class="intro">
+  <h1>
+    📦 アーカイブ版<br>
+    <span class="marker">旧worksheet全資料（検討プロセス・非公開素材含む）</span>
+  </h1>
+  <p>
+    このページは <strong>2026-05-17にポートフォリオ完成形を再設計</strong> した際の参考用アーカイブ。<br>
+    本worksheetは <a href="index.html" style="color: var(--accent); font-weight: 700;">→ 新worksheet（公開ポートフォリオ8セクション対応の整理シート）</a> に移行済み。
+  </p>
+  <p>
+    ここに残っている素材は：<br>
+    ① <strong>公開ポートフォリオに採用されなかった検討プロセス</strong>（複数案・代替案・Q&amp;A履歴）<br>
+    ② <strong>面接持参用の素材</strong>（A1応募先別Why / S2失敗エピソード詳細 / EF Annual Feedbackなど）<br>
+    ③ <strong>素材洗い出しの記録</strong>（02_Claude_Code全体スキャン結果）
+  </p>
+  <div class="meta">
+    旧構成：S3 → A2 → S1 → S2 → B1 → EF → A3 → B3 → A1（9セクション・B2はStatement実装で削除済み）<br>
+    用途：採用面接の事前準備で深掘りしたい素材がある時の参照
+  </div>
+</div>
+
+<!-- ============ TOC ============ -->
+<div class="toc">
+  <div class="toc-title">10 sections · ordered by lightness</div>
+  <div class="toc-list">
+    <a class="toc-item" href="#s3"><span class="toc-num">01</span><span class="toc-tag">S3</span><span class="toc-label">By the Numbers — 数字で語る</span><span class="toc-status">骨子4/5 · AI数字TBD</span></a>
+    <a class="toc-item" href="#a2"><span class="toc-num">02</span><span class="toc-tag">A2</span><span class="toc-label">Career Arc — 16年を4章に</span><span class="toc-status done">✓ 骨子確定</span></a>
+    <a class="toc-item" href="#s1"><span class="toc-num">03</span><span class="toc-tag">S1</span><span class="toc-label">Decisions I Made — 私が下した判断</span><span class="toc-status">骨子2/5 · 3-5位TBD</span></a>
+    <a class="toc-item" href="#s2"><span class="toc-num">04</span><span class="toc-tag">S2</span><span class="toc-label">Bets &amp; Pivots — 賭けと撤退</span><span class="toc-status wip">TOP2叩き台埋め込み · 3位TBD</span></a>
+    <a class="toc-item" href="#b1"><span class="toc-num">05</span><span class="toc-tag">B1</span><span class="toc-label">Leadership Philosophy — 仕事観</span><span class="toc-status done">✓ 骨子5/5確定</span></a>
+    <a class="toc-item" href="#ef"><span class="toc-num">06</span><span class="toc-tag">EF</span><span class="toc-label">External Feedback — 他者評価</span><span class="toc-status">骨子推薦あり · 公開範囲TBD</span></a>
+    <a class="toc-item" href="#a3"><span class="toc-num">07</span><span class="toc-tag">A3</span><span class="toc-label">References — 推薦コメント</span><span class="toc-status">骨子枠 · 中身選定中</span></a>
+    <a class="toc-item" href="#b3"><span class="toc-num">08</span><span class="toc-tag">B3</span><span class="toc-label">Now / Next — 現在の学習と次</span><span class="toc-status done">✓ 骨子確定（リアリティ5作品+野望）</span></a>
+    <a class="toc-item" href="#a1"><span class="toc-num">09</span><span class="toc-tag">A1</span><span class="toc-label">Why This Company — 応募先別</span><span class="toc-status wip">本命3社叩き台 · 本人推敲待ち</span></a>
+  </div>
+</div>
+
+<!-- ============ TOP RECOVERY BAR ============ -->
+<div class="top-recovery">
+  <strong>抽出済みの最強発見TOP4</strong> ／
+  ① MCCM案件 累計144万視聴・前年比+62%・協賛19社 ／
+  ② 9業界×大手企業 同時並行ポートフォリオ ／
+  ③ Working Style三原則「ミスより遅い／正確さより分かりやすさ／早めのたたき台」 ／
+  ④ <strong>他者評価で「好奇心・成長マインド 4.5/5」「労働倫理 4/5」「マインドセット 4/5」</strong>（社内Annual Feedback）
+</div>
+
+<!-- ============ SECTION S3 ============ -->
+<span class="anchor" id="s3"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title">By the Numbers</h2>
+    <span class="sec-subtitle">S3 · 数字で語る</span>
+  </div>
+  <p class="sec-aim">
+    数字で語れる人＝採用される人。ポートフォリオ Statsセクションに転写する骨子。
+  </p>
+
+  <!-- ===== 骨子（最終形） ===== -->
+  <div class="final-copy">
+    <h3>Statsカード（公開ポートフォリオに直接転写）</h3>
+    <div class="copy-block">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">×3.6</span>
+          <div class="stat-label">売上成長</div>
+          <div class="stat-sub">事業責任者就任1年・前年比</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">+15%</span>
+          <div class="stat-label">粗利改善</div>
+          <div class="stat-sub">前年比</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">9業界</span>
+          <div class="stat-label">大手企業並行</div>
+          <div class="stat-sub">Firework現職</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">16年 / 6社</span>
+          <div class="stat-label">越境キャリア</div>
+          <div class="stat-sub">TV→Web→音楽→コマース</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num tbd">TBD</span>
+          <div class="stat-label">AI関連の代表数字</div>
+          <div class="stat-sub">候補出し未着手（下メモ参照）</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>方針（公開時の定型文・注記）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>公開方針：</strong> Firework就任1年の3指標(×3.6/+15%/33%)とキャリア横断(9業界/16年6社)を中心に。個別クライアント(MCCM/Starbucks/ヤマダ等)の定量は出さず、社名のみ列挙。
+      </div>
+      <div class="copy-note">
+        <strong>本人定型文（Firework部分）：</strong> ライブ配信・ショート動画を活用した「動画コマース」領域でCreative Strategistとして従事。2024年にCreative Teamの事業責任者に就任後、事業計画・営業・クリエイティブを統括し、<strong>就任1年で売上を前年比3.6倍に拡大</strong>。AI活用による業務効率化・新サービス(コンサル・内製化支援)の開発・制作パートナーとの単価交渉により、<strong>粗利+15%</strong>も同時に実現。
+      </div>
+      <div class="copy-note">
+        <strong>NewBiz構成比 33%：</strong> 説明が要る数字のため Statsカードではなく Career Firework詳細内に小さく配置。
+      </div>
+    </div>
+
+    <h3>伸びしろ → 定量的な課題解決・目標設定（EFセクションと連動）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        社内Annual Feedback の中スコア項目を「次サイクルでの定量目標」として明示する。<br>
+        例：<strong>デリバリー 3.5 → 4.5</strong>（◯◯施策で測定）／<strong>強い推進力 3.5 → 4.5</strong>／<strong>創造的解決 3.0 → 4.0</strong>／<strong>期限内 3.0 → 4.5</strong><br>
+        → 「課題を定量で握って改善運用している」運用力をそのままポートフォリオで見せる。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ・候補・アイデア</span>
+      <span class="fold-meta">公開する数字テーブル / 評価スコア / Q&amp;A履歴</span>
+    </summary>
+
+    <div class="material">
+      <div class="material-label">公開する数字（テーブル形式・骨子の元データ）</div>
+      <table>
+        <tr><th>カテゴリ</th><th>指標</th><th>数字</th></tr>
+        <tr><td rowspan="3" style="background:var(--accent-soft);"><strong>Firework Japan<br>事業責任者として<br>就任1年の成果</strong></td><td>売上成長(前年比)</td><td><strong style="color:var(--accent); font-size:16px;">×3.6</strong>(2024→2025)</td></tr>
+        <tr><td>粗利改善(前年比)</td><td><strong style="color:var(--accent); font-size:16px;">+15%</strong></td></tr>
+        <tr><td>NewBiz構成比(Japan Team全体売上)</td><td><strong style="color:var(--accent); font-size:16px;">33%</strong></td></tr>
+        <tr><td rowspan="3">キャリア全体</td><td>キャリア年数</td><td><strong>16年</strong>(2011.4〜)</td></tr>
+        <tr><td>渡り歩いた会社</td><td><strong>6社</strong></td></tr>
+        <tr><td>業界横断経験</td><td>TV / Web / 音楽 / コマース <strong>4領域</strong></td></tr>
+        <tr><td>LiveShop! 時代<br>(Candee)</td><td>制作本数 / チーム規模</td><td>月<strong>30〜60本</strong> / 最大<strong>14名</strong></td></tr>
+        <tr><td>学習・自己投資</td><td>英語学習</td><td>RIZAP ENGLISH <strong>5年継続</strong>(B1-B2)</td></tr>
+        <tr><td>資格</td><td>DMM生成AI CAMP</td><td>生成AIエンジニアコース修了(2026.1)</td></tr>
+      </table>
+    </div>
+
+    <div class="material">
+      <div class="material-label">他者評価スコア（社内Annual Feedback × カントリーマネージャー＋同僚Peer Review）→ 定量的な課題解決・目標設定の素材として活用</div>
+      <table>
+        <tr><th>評価項目</th><th>スコア</th><th>出典</th><th>位置づけ</th></tr>
+        <tr><td>好奇心・成長マインド</td><td><strong style="color:var(--green)">4.5 / 5</strong></td><td>2025 mid year</td><td>強み（高評価）</td></tr>
+        <tr><td>労働倫理</td><td><strong style="color:var(--green)">4 / 5</strong></td><td>FY25 Annual</td><td>強み（高評価）</td></tr>
+        <tr><td>マインドセット</td><td><strong style="color:var(--green)">4 / 5</strong></td><td>FY25 Annual</td><td>強み（高評価）</td></tr>
+        <tr><td>デリバリー</td><td>3.5 / 5</td><td>2025 mid year</td><td>定量目標化の対象（→4.5）</td></tr>
+        <tr><td>強い推進力・勤勉さ（粘り強い姿勢）</td><td>3.5 / 5</td><td>2025 mid year</td><td>定量目標化の対象（→4.5）</td></tr>
+        <tr><td>創造的な解決</td><td>3 / 5</td><td>FY25 Annual</td><td>定量目標化の対象（→4.0）</td></tr>
+        <tr><td>期限内</td><td>3 / 5</td><td>FY25 Annual</td><td>定量目標化の対象（→4.5）</td></tr>
+      </table>
+    </div>
+
+    <div class="material">
+      <div class="material-label">TODO: 5位「AI関連の代表数字」候補出し</div>
+      <ul>
+        <li>旧案「自作ツール15以上」 → 数字の根拠説明が要る／盛った印象になりやすい → 棚上げ</li>
+        <li>候補A: 「AI活用で◯時間削減」（例: 月100h+削減）</li>
+        <li>候補B: 「AI×WORK 15h→2h・30h→8h」（既出AI×WORKブロックの主成果と直接連動）</li>
+        <li>候補C: 「DMM生成AI CAMP修了」（資格・カテゴリ）</li>
+        <li>候補D: 「AI起点の新規サービス◯件立ち上げ」</li>
+      </ul>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1</div>
+      <div class="q-text">公開してOKな数字／伏せたい数字を切り分けるとどうなる？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16</span>
+        <strong>方針：各クライアントの定量情報は不要。Fireworkのみ具体的な数字を入れる。</strong>
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li><strong>公開する数字（Firework Japan・事業責任者として就任1年の成果）：</strong></li>
+          <li style="margin-left:14px;">売上成長 <strong>×3.6</strong>（前年比、2024→2025）</li>
+          <li style="margin-left:14px;">粗利改善 <strong>+15%</strong>（前年比）</li>
+          <li style="margin-left:14px;">NewBiz構成比 <strong>33%</strong>（Japan Team全体売上に占める比率）</li>
+          <li><strong>非公開（個別クライアントの定量情報）：</strong></li>
+          <li style="margin-left:14px;">MCCM 144万視聴・協賛19社・配信回数等</li>
+          <li style="margin-left:14px;">Starbucks ¥22.86M・粗利23.7%</li>
+          <li style="margin-left:14px;">ヤマダデンキ 月次原価</li>
+          <li style="margin-left:14px;">→ 社名のみ列挙はOK（既に公開ポートフォリオでも社名は出ている）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2</div>
+      <div class="q-text">この中で「これは特に誇れる」TOP5は？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16（5位は再検討中・骨子のTBD参照）</span>
+        <p>1位 ×3.6 / 2位 +15% / 3位 9業界 / 4位 16年6社 / <strong>5位 AI関連（要再選定）</strong></p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3</div>
+      <div class="q-text">まだ言語化できていない数字はある？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16</span>
+        <strong>判断：突っ込んだ追加数字は出さない方針。</strong>
+        <p style="margin-top:8px;">累計番組数・累計マネジメント人数・累計配信時間などは正確な数字を出しにくいため、推測ベースの「盛った数字」になるリスクがある。骨子の4枠+1枠で勝負する。</p>
+      </div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge wip">REFINING · 骨子4/5確定・5位検討中</span>
+    <span class="timestamp">last update: 2026-05-16 / 骨子構造リビルド</span>
+  </div>
+</section>
+
+<!-- ============ SECTION A2 ============ -->
+<span class="anchor" id="a2"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title">Career Arc</h2>
+    <span class="sec-subtitle">A2 · 16年を4章に</span>
+  </div>
+  <p class="sec-aim">
+    横並びの職歴ではなく、Mandate（使命）別の章で語る。「物語の主人公」感が出る。
+  </p>
+
+  <!-- ===== 骨子（最終形） ===== -->
+  <div class="final-copy">
+    <h3>キャリア4章構成（公開ポートフォリオCareerセクションに直接転写）</h3>
+    <div class="copy-block">
+      <table>
+        <tr><th style="width:80px;">章</th><th>タイトル</th><th>期間</th><th>Mandate</th></tr>
+        <tr><td><strong>Chapter 1</strong></td><td><strong>制作者</strong></td><td>2011-2018</td><td>映像でエンタメを動かす技術を身につける</td></tr>
+        <tr><td><strong>Chapter 2</strong></td><td><strong>プロデューサー</strong></td><td>2018-2023</td><td>クライアントワークで「数字を出す制作」を確立する</td></tr>
+        <tr><td><strong>Chapter 3</strong></td><td><strong>事業責任者</strong></td><td>2024-現在</td><td>制作部門をP/L責任を持つ事業に変える</td></tr>
+        <tr style="background:var(--accent-soft);"><td><strong>Chapter 4</strong></td><td><strong style="color:var(--accent);">熱狂を作る人</strong></td><td>Next</td><td>熱狂的なファンを生むコンテンツを作る<br><span style="font-size:12px; color:var(--ink-soft);">→ 具体的にはリアリティーショー領域（ベンチマーク：SASUKE／白と黒のスプーン／あいの里）</span></td></tr>
+      </table>
+    </div>
+
+    <h3>方針（背景・整合性）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>4章構成にした理由：</strong>Ch.4「Next」を空欄として残すことで、採用担当が「ここに自社が入るかも」と想像できる構造。Netflix「Why now」DMM「変化を学びと捉える」両方への対応素材。
+      </div>
+      <div class="copy-note">
+        <strong>日本語タイトル統一：</strong>B1 Brand Voice原則（カタカナビジネス語を避ける）と完全整合。「クリエイティブディレクター」「プロデューサー」のような肩書きではなく Mandate(使命)で語ることで、業界横断を一本化。
+      </div>
+      <div class="copy-note">
+        <strong>「熱狂を作る人」の出典：</strong>コーチングセッション本人発言「ラーメン二郎のような一部の熱狂的なファンを作りたい」「万人受け（綺麗で整った音楽）を目指しているわけではない」と完全一致。Netflix Creativity / DMM「変化を楽しむ」両方の価値観と整合。
+      </div>
+      <div class="copy-note">
+        <strong>具体ドメイン＝リアリティーショー・ドキュメンタリー：</strong>抽象論で終わらせず、具体的に「リアリティーショー・ドキュメンタリー領域」と明示。ベンチマーク5作品はいずれも熱狂的ファンベースを持ち、誰かの人生に影響を与える型 —<br>
+        ・<strong>SASUKE</strong>：一般人が極限の身体能力に挑む、20年以上続くロングラン・グローバル展開（誰かの生きがい・人生になってしまうほどの熱狂）<br>
+        ・<strong>白と黒のスプーン</strong>（Netflix韓国）：料理勝負、Netflix内で繰り返し再生されるシリーズ化型<br>
+        ・<strong>あいの里</strong>（Netflix日本）：30〜60代の恋愛リアリティ、特定層を深く刺し続編・関連企画が続く<br>
+        ・<strong>マネーの虎</strong>：起業挑戦者と投資家のガチンコ勝負、ヒーローを生み出した型<br>
+        ・<strong>愛の貧乏脱出大作戦</strong>：修行で人生再起、誰かの人生に直接介入する型
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ・キーワード素材・Q&amp;A履歴</span>
+      <span class="fold-meta">3章 vs 4章検討 / 章タイトル言語選定</span>
+    </summary>
+
+    <div class="note">
+      <strong>キーワード（コーチング素材から）：</strong>「『ラーメン二郎』のような一部の熱狂的なファンを作りたい」「万人受けを目指しているわけではない」「マイノリティでも熱狂」「番組制作にたずさわりたい」
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1</div>
+      <div class="q-text">3章構成 / 4章構成、どちらが自分のキャリアを語りやすい？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16</span>
+        4章構成で確定。Ch.4「Next」を空欄として残すことで、採用担当が「ここに自社が入るかも」と想像できる構造。
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2</div>
+      <div class="q-text">Chapter 4 のタイトル / Mandate を1行で書くなら？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16</span>
+        「熱狂を作る人」／ Mandate「熱狂的なファンを生むコンテンツを作る」
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3</div>
+      <div class="q-text">各章のタイトルは英語と日本語どちらが好み？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16</span>
+        日本語タイトル統一で確定（B1 Brand Voice原則と整合）
+      </div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge done">骨子確定 · 公開ポートフォリオに転写可</span>
+    <span class="timestamp">last update: 2026-05-16 / 骨子化</span>
+  </div>
+</section>
+
+<!-- ============ SECTION S1 ============ -->
+<span class="anchor" id="s1"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">Decisions I Made</h2>
+    <span class="sec-subtitle">S1 · 私が下した判断</span>
+  </div>
+  <p class="sec-aim">
+    Netflix "Drove a decision" 質問への直接素材 / DMM起業家精神 / AbemaTVゼロイチ実績、全て同時に証明できる最重要セクション。
+  </p>
+
+  <!-- ===== 骨子（最終形） ===== -->
+  <div class="final-copy">
+    <h3>Decisions TOP3-5（公開ポートフォリオ「私が下した判断」セクションに転写）</h3>
+    <div class="copy-block">
+      <div class="cand-card cand-confirmed">
+        <div class="cand-head">
+          <span class="cand-id">D2</span>
+          <span class="cand-rank">🥇 1位</span>
+          <span class="cand-title">Firework Creative Team 事業責任者就任</span>
+        </div>
+        <div>「制作受託」から「P/L責任を持つ事業」へ再定義 — 売上×3.6 / 粗利+15% の起点となった意思決定</div>
+      </div>
+      <div class="cand-card cand-confirmed">
+        <div class="cand-head">
+          <span class="cand-id">D1</span>
+          <span class="cand-rank">🥈 2位</span>
+          <span class="cand-title">LiveShop! ゼロイチ立ち上げ</span>
+        </div>
+        <div>外注依存ではなく自社完結方針を選択 — Candee時代の制作体制を月30〜60本/最大14名チームへ拡大</div>
+      </div>
+      <div class="cand-card" style="border-left:4px dashed var(--gold); background:var(--gold-soft);">
+        <div class="cand-head">
+          <span class="cand-id" style="background:var(--gold); color:#fff;">TBD</span>
+          <span class="cand-rank">3-5位</span>
+          <span class="cand-title">高推薦5件から選定中（D13 / D7 / D6 / D14 / D8）</span>
+        </div>
+        <div>下のメモに候補ランク表とオススメ組合せ4案を整理済み。選択待ち。</div>
+      </div>
+    </div>
+
+    <h3>方針（背景・整合性）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>採用基準対応：</strong>D2/D1 で Netflix "Drove a decision" / DMM起業家精神 / AbemaTVゼロイチを同時に証明。3-5位選定で Self-Coaching哲学 / クライアントワーク原則 / AI×WORK起源 のどれを補強するかを決める。
+      </div>
+      <div class="copy-note">
+        <strong>各判断にはSTAR形式で「他案を退けた根拠」を併記予定。</strong> Netflix適合の鍵。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ：候補ランク表（高/中/低推薦12件）+ オススメ組合せ4案</span>
+      <span class="fold-meta">3-5位選定用</span>
+    </summary>
+
+    <!-- ====== 高推薦 5件 ====== -->
+    <div class="rank-section">
+      <span class="rank-section-title high">⭐⭐⭐ 高推薦（5件）</span>
+      <div class="rank-section-note">既出ブロックとの接続性が強い、または独自性で際立つ候補</div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D13</span>
+          <span class="cand-title">スケーラブルなPS設計への着手</span>
+        </div>
+        <div>「自走プラン1年サポート」と「5年伴走パターン」を同じ一定金額でペイできる料金体系を設計</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / 起業家精神 ◎ / 事業設計力 ◎</dd>
+          <dt>既出連動</dt><dd><strong>Firework IMPACT「粗利+15%」の構造的根拠</strong></dd>
+          <dt>公開リスク</dt><dd><span class="risk-low">低</span> — 料金体系の思想だけ抽象化すればOK</dd>
+        </dl>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D7</span>
+          <span class="cand-title">「70分以内縛り」独自KPI設計</span>
+        </div>
+        <div>配信時間バイアス分析手法を独自設計、AI×WORK 15h→2h の起点</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / 独自手法設計 ◎ / AI活用 ◎</dd>
+          <dt>既出連動</dt><dd><strong>AI×WORKブロック「15h→2h」の起点</strong></dd>
+          <dt>公開リスク</dt><dd><span class="risk-low">低</span></dd>
+        </dl>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D6</span>
+          <span class="cand-title">MCCM 2026年度目標値 3段階交渉着地</span>
+        </div>
+        <div>6,500 → 7,000 → 7,500人で着地、クライアント・本社両方と交渉</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / Courage ◎ / クライアントワーク ◎</dd>
+          <dt>公開リスク</dt><dd><span class="risk-mid">中</span> — 具体数字の公開可否要確認</dd>
+        </dl>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D14</span>
+          <span class="cand-title">Annual Feedback後の社内制度提案</span>
+        </div>
+        <div>評価制度・キャリアパスについて自ら制度設計を提案</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>起業家精神 ◎ / Self-Coaching哲学の外側展開 ◎</dd>
+          <dt>公開リスク</dt><dd><span class="risk-mid">中</span></dd>
+        </dl>
+        <div class="cand-warn">⚠️ 要確認：構想止まりではなく、実際に動いた提案として書ける？</div>
+      </div>
+
+      <div class="cand-card high">
+        <div class="cand-head">
+          <span class="cand-id">D8</span>
+          <span class="cand-title">MCCM主KPI/全体KPI 両立構造の提案</span>
+        </div>
+        <div>競合4社比較から発見、単一KPIではなく階層構造で両立を実現</div>
+        <dl class="cand-meta">
+          <dt>採用基準</dt><dd>Drove a decision ◎ / 戦略フレーム設計力 ◎</dd>
+          <dt>公開リスク</dt><dd><span class="risk-mid">中</span></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- ====== 中推薦 4件 ====== -->
+    <div class="rank-section">
+      <span class="rank-section-title mid">⭐⭐ 中推薦（4件）</span>
+      <div class="rank-section-note">手堅いが既出ブロックとの接続性 or 独自性で一段落ちる</div>
+
+      <div class="cand-card mid">
+        <div class="cand-head"><span class="cand-id">D10</span><span class="cand-title">ロレアル・プラダ案件「代理店リプレイス狙い」2パターン同時提案</span></div>
+        <div>公開リスク <span class="risk-high">高</span> — 結果次第。受注前なら書きづらい</div>
+      </div>
+      <div class="cand-card mid">
+        <div class="cand-head"><span class="cand-id">D11</span><span class="cand-title">コープこうべ「分析より施策」リソース配分判断</span></div>
+        <div>公開リスク <span class="risk-low">低</span> — 地味だが手堅い</div>
+      </div>
+      <div class="cand-card mid">
+        <div class="cand-head"><span class="cand-id">D12</span><span class="cand-title">マンチェス案件「試作プラン¥120K」入口戦略</span></div>
+        <div>D13と方向性が似ている。両方は冗長か</div>
+      </div>
+      <div class="cand-card mid">
+        <div class="cand-head"><span class="cand-id">D9</span><span class="cand-title">Asics案件 段階提案戦略（概算→詳細）</span></div>
+        <div>戦略としては優秀だが、独自性は弱い</div>
+      </div>
+    </div>
+
+    <!-- ====== 低推薦 3件 ====== -->
+    <div class="rank-section">
+      <span class="rank-section-title low">⭐ 低推薦（3件）</span>
+      <div class="rank-section-note">S1には不向き、別セクション向きまたは優先度低</div>
+
+      <div class="cand-card low">
+        <div class="cand-head"><span class="cand-id">D3</span><span class="cand-title">Jリーグルヴァンカップ Facebook Live 3社協業</span></div>
+        <div>D1のLiveShop!時代に被る。一段優先度低</div>
+      </div>
+      <div class="cand-card low">
+        <div class="cand-head"><span class="cand-id">D4</span><span class="cand-title">ちゃんみな PRINCESS PROJECT</span></div>
+        <div>「Decision」ではなく「実行力」の話。S1には不向き</div>
+      </div>
+      <div class="cand-card low">
+        <div class="cand-head"><span class="cand-id">D5</span><span class="cand-title">MCCM 6,897人配信タイトル誤記事故 → 検証ルールをスキル化</span></div>
+        <div><strong>S2「Bets &amp; Pivots」の素材として強い</strong>。S2に回すのを推奨</div>
+      </div>
+    </div>
+
+    <!-- ====== オススメ組み合わせ ====== -->
+    <div class="combo-block">
+      <h4>🎯 オススメ組み合わせ（参考）</h4>
+      <div class="combo-item">
+        <strong>案① 既出ブロック全裏付け型（5件）</strong>
+        <div class="combo-seq">D2 → D1 → D13 → D7 → D14</div>
+        <div class="combo-pros">+ Firework IMPACT / AI×WORK / Self-Coaching の3ブロックと完全対応</div>
+        <div class="combo-cons">- クライアント案件ゼロは弱点</div>
+      </div>
+      <div class="combo-item">
+        <strong>案② バランス型（5件）</strong>
+        <div class="combo-seq">D2 → D1 → D13 → D7 → D6</div>
+        <div class="combo-pros">+ 戦略設計 + 独自手法 + クライアント交渉のバランス</div>
+        <div class="combo-cons">- D14が抜ける弱点</div>
+      </div>
+      <div class="combo-item">
+        <strong>案③ ミニマル（3件）</strong>
+        <div class="combo-seq">D2 → D1 → D13</div>
+        <div class="combo-pros">+ Firework集中、他セクションに余白</div>
+        <div class="combo-cons">- 物語の数が少ない</div>
+      </div>
+      <div class="combo-item">
+        <strong>案④ Courage強調（4件）</strong>
+        <div class="combo-seq">D2 → D1 → D6 → D14</div>
+        <div class="combo-pros">+ 「揉めた相手いた」軸で統一</div>
+        <div class="combo-cons">- 数字との直接的接続は弱まる</div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2</div>
+      <div class="q-text">各事例で「自分が決めて、他案を退けた根拠」を一言で言える？</div>
+      <div class="answer empty"><span class="answer-label">未確定（3-5位確定後に追記）</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3</div>
+      <div class="q-text">それぞれの判断で「揉めた相手・反対意見」はあった？</div>
+      <div class="answer empty"><span class="answer-label">未確定（3-5位確定後に追記）</span></div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge wip">骨子2/5確定 · 3-5位選定中</span>
+    <span class="timestamp">last update: 2026-05-16 / 骨子化</span>
+  </div>
+</section>
+
+<!-- ============ SECTION S2 ============ -->
+<span class="anchor" id="s2"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">Bets &amp; Pivots</h2>
+    <span class="sec-subtitle">S2 · 賭けと撤退</span>
+  </div>
+  <p class="sec-aim">
+    日本人転職者がほぼ書けない、最強の差別化セクション。Netflix Courage / DMM「本気の失敗肯定」の体現。
+  </p>
+
+  <!-- ===== 骨子（最終形・空枠） ===== -->
+  <div class="final-copy">
+    <h3>Bets &amp; Pivots TOP2-3（公開ポートフォリオ「賭けと撤退」セクションに転写）</h3>
+    <div class="copy-block">
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head">
+          <span class="cand-id">叩き台</span>
+          <span class="cand-rank">1位</span>
+          <span class="cand-title">P1 ワーナーミュージック5ヶ月撤退 → フリーランス越境（2018-19）</span>
+        </div>
+        <div style="font-size:14px; line-height:1.7;">
+          <strong>Situation：</strong>テレビ制作7年を経て、より幅広いキャリアを求めて音楽業界大手のワーナーミュージックに転職。<br>
+          <strong>Action：</strong>新領域に飛び込むこと自体を「賭け」として選択。<br>
+          <strong>Result：</strong>5ヶ月で「自分の強みと組織の期待値がズレている」と判断、撤退。<br>
+          <strong>Pivot：</strong>フリーランスへ越境。会社員レールではなく「自分で領域を選ぶ」キャリアに転換。この経験がCandee（ライブ配信）→ Firework（事業責任者）の越境キャリアの土台になった。<br>
+          <strong>学び：</strong>「合わない場所に長居する方が、撤退するより大きな機会損失」。失敗ではなく、判断としては正しかった事例。
+        </div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head">
+          <span class="cand-id">叩き台</span>
+          <span class="cand-rank">2位</span>
+          <span class="cand-title">P3 MCCM Xフォロリポ施策 — 数字で逆効果と判明し撤退</span>
+        </div>
+        <div style="font-size:14px; line-height:1.7;">
+          <strong>Situation：</strong>MCCM「マツキヨココカラライブ」のリピーター数を増やすため、X（旧Twitter）でのフォロー&リポストキャンペーン施策を企画・実施。<br>
+          <strong>Action：</strong>仮説「SNS露出を増やせばリピーター獲得につながる」に基づき、複数回展開。<br>
+          <strong>Result：</strong>リピーター数は確かに+60〜81%増加した。しかし同時に視聴分数▼43%、購買誘導指標も悪化。「フォロー目的の流入」が「視聴体験の質」を下げていたと数字で判明。<br>
+          <strong>Pivot：</strong>「数字が逆効果」と判断し撤退。施策を取り止め、リピーター獲得は「視聴体験そのものの質向上」へ方針転換。<br>
+          <strong>学び：</strong>「KPIを単一指標で見ない」。フォロワー数のような分かりやすい数字は、別の重要指標を犠牲にしていることがある。撤退判断を数字でできることが、施策実装力と同じく重要。
+        </div>
+      </div>
+      <div class="cand-card" style="border-left:4px dashed var(--gold); background:var(--gold-soft);">
+        <div class="cand-head">
+          <span class="cand-id" style="background:var(--gold); color:#fff;">TBD</span>
+          <span class="cand-rank">3位</span>
+          <span class="cand-title">候補：P2 OPENREC転職検討（リアルタイム）／P8 WebP一括変換 のいずれか</span>
+        </div>
+        <div>3件目を入れるか、TOP2のみにするかは本人選定で決める。P2は現在進行形でリアルさが強み・公開リスク中、P8は技術判断系で公開しやすい</div>
+      </div>
+    </div>
+
+    <h3>方針（公開時の構成）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>各事例はSTAR形式：</strong>状況(Situation)→ 取った賭け(Action)→ 結果と何が起きた(Result)→ 学び(Pivot)
+      </div>
+      <div class="copy-note">
+        <strong>公開判断：</strong>社内的に伏字が必要なものは「業界他社」「クライアントA」など匿名化。失敗を語ること自体がCourageの証拠なので、誇張せず事実ベースで。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ：候補8件 + 自己認識素材</span>
+      <span class="fold-meta">P1〜P8 / Q&amp;A未着手</span>
+    </summary>
+
+    <div class="material">
+      <div class="material-label">候補8件（抽出済み）</div>
+      <ul>
+        <li><strong>P1.</strong> ワーナーミュージック 5ヶ月撤退 → フリーランス越境（2018-19）</li>
+        <li><strong>P2.</strong> OPENREC転職検討が進行中（2026.4、リアルタイム） — 現職840万円事業責任者からのダウンシフト覚悟</li>
+        <li><strong>P3.</strong> MCCM Xフォロリポ施策 — リピーター+60〜81%だが視聴分数▼43%、購買誘導には逆効果</li>
+        <li><strong>P4.</strong> 「新規獲得型施策の限界」表現の弱化（セルフレビューでロジック修正）</li>
+        <li><strong>P5.</strong> MCCM 2024年度比較の前提見直し（Apple-to-Apple再集計に差し替え）</li>
+        <li><strong>P6.</strong> Q2 Offsite アジェンダ時間配分を3回再調整</li>
+        <li><strong>P7.</strong> Portfolio2026 公開リポジトリ事故（個人mdをPublicへpush → .gitignore強化）</li>
+        <li><strong>P8.</strong> WebP一括変換の失敗 → 「全部WebP」ではなく「削減できたものだけ」へ方針転換</li>
+        <li><strong>+ D5（S1から移動候補）：</strong>MCCM 6,897人配信タイトル誤記事故 → 検証ルールをスキル化</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <strong>自己認識：</strong>「会社や周りに流されてしまい自分を100%出しきれなかった」（わたしがやりたいこと2026.3.pdf）— Courage素材の伏線
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1（未着手）</div>
+      <div class="q-text">「失敗だが、判断としては正しかった」と思える事例はどれ？</div>
+      <div class="answer empty"><span class="answer-label">Answer（対話で確定する）</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2（未着手）</div>
+      <div class="q-text">ポートフォリオに2〜3件載せるとしたら、どれを選ぶ？</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3（未着手）</div>
+      <div class="q-text">公開できる失敗の限度は？（社名/数字を伏せる必要があるか）</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge wip">TOP2（P1ワーナー撤退/P3 Xフォロリポ撤退）叩き台埋め込み · 3位TBD · 本人推敲で確定</span>
+    <span class="timestamp">last update: 2026-05-16 / TOP2叩き台埋め込み</span>
+  </div>
+</section>
+
+<!-- ============ SECTION B1 ============ -->
+<span class="anchor" id="b1"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">05</span>
+    <h2 class="sec-title">Leadership Philosophy</h2>
+    <span class="sec-subtitle">B1 · 仕事観の核</span>
+  </div>
+  <p class="sec-aim">
+    抽象論ではなく、具体エピソード付きの哲学声明。本人言葉が既に大量に発見済み。
+  </p>
+
+  <!-- ===== 骨子（最終形・推薦案あり） ===== -->
+  <div class="final-copy">
+    <h3>Leadership 3〜5原則（公開ポートフォリオ「仕事観」セクションに転写）</h3>
+    <div class="copy-block">
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head">
+          <span class="cand-id">1</span>
+          <span class="cand-title">ミスより遅い方がいい</span>
+        </div>
+        <div>確認を惜しまない。「迷ったら止まって聞く。黙って進めない」</div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head">
+          <span class="cand-id">2</span>
+          <span class="cand-title">正確さより分かりやすさ</span>
+        </div>
+        <div>難しい言葉は使わない。カタカナビジネス語を避け、散文で書く</div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head">
+          <span class="cand-id">3</span>
+          <span class="cand-title">完璧な一発より、早めのたたき台</span>
+        </div>
+        <div>フィードバックを前提に動く。「『たぶんこういうことだろう』と推測で進めない」</div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head">
+          <span class="cand-id">4</span>
+          <span class="cand-title">AI時代こそ、人間の非合理・ムダに価値がある</span>
+        </div>
+        <div>AIによる超合理化が進むほど、人間の非効率・意味不明さ・ムダ・逆転発想が際立つ。「ラーメン二郎」「リアリティーショーで人生変革」のような、合理を超えた熱狂を作るのが自分の戦場（出典：わたしがやりたいこと2026.3.pdf）</div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head">
+          <span class="cand-id">5</span>
+          <span class="cand-title">コンテンツは、誰かの人生のスイッチを押せる</span>
+        </div>
+        <div>
+          Candee「監禁男子」を配信していた頃、ある不登校の女子学生がTwitterで「監禁男子を見て元気をもらえた。少しずつ登校を再開してみようかな」とつぶやいていた。仕事で一番嬉しかった瞬間。この感覚を、もっと大きなスケールで届け続けたい。
+        </div>
+      </div>
+    </div>
+
+    <h3>方針（背景・整合性）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>Working Style三原則を骨子の核に：</strong>本人が日常で口にしているフレーズで、社内Annual Feedbackでも他者から「実践している」と評価されている項目（カスタマーセントリック・Win Together・チームプレー）と整合する。
+      </div>
+      <div class="copy-note">
+        <strong>5原則の構造：</strong>1〜3は仕事の進め方（Working Style三原則・本人言葉）、4は時代観（AI時代の差別化）、5は原体験（コンテンツの可能性を信じる根拠）。抽象的な4原則の最後に具体エピソードを置くことで、4原則の信ぴょう性も上がる。
+      </div>
+      <div class="copy-note">
+        <strong>5原則目（監禁男子エピソード）の役割：</strong>公開ポートフォリオのStatementセクション「クリエイティブと事業成長、二刀流で挑むコンテンツビジネスプロデューサー」と呼応——Statementで立ち位置を宣言、B1で「なぜそうするか」をエピソードで証明する流れ。B3「Next」/ A1（応募先別Why）でも原典として参照可能。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ：素材5層（Working Style / Brand Voice / 創作哲学 / クライアントワーク / 他者評価実証）</span>
+      <span class="fold-meta">既出原則候補 / Q&amp;A未着手</span>
+    </summary>
+
+    <div class="material">
+      <div class="material-label">⭐ Working Style三原則（本人言葉・最重要）</div>
+      <ul>
+        <li><strong>1. ミスより遅い方がいい</strong>（確認を惜しまない）</li>
+        <li><strong>2. 正確さより分かりやすさ</strong>（難しい言葉は使わない）</li>
+        <li><strong>3. 完璧な一発より、早めのたたき台</strong>（フィードバックを前提に動く）</li>
+      </ul>
+      <p style="margin-top:8px; font-size:13px; color:var(--ink-soft);">
+        補足：「迷ったら止まって聞く。黙って進めない。」「『たぶんこういうことだろう』と推測で進めない。」
+      </p>
+    </div>
+
+    <div class="material">
+      <div class="material-label">⭐ Brand Voice（言葉の哲学）</div>
+      <ul>
+        <li>カタカナビジネス用語（ソリューション・シナジー・アジェンダ・コンセンサス）を避ける</li>
+        <li>提案や意見はハッキリ言う（曖昧にしない）</li>
+        <li>箇条書きより文章（散文）を優先する</li>
+      </ul>
+    </div>
+
+    <div class="material">
+      <div class="material-label">⭐ 創作哲学（わたしがやりたいこと2026.3.pdf＋2026.5ビジョンメモ）</div>
+      <ul>
+        <li>「<strong>ムダこそデジタル時代に必要</strong>」</li>
+        <li>「<strong>逆転・逸脱の思考</strong>」</li>
+        <li>「<strong>自らやりたいことをみつけ失敗を恐れず行動する人を増やしたい</strong>」</li>
+        <li>「<strong>誰かの人生や生活に良い影響を与えるコンテンツを作りたい</strong>」（2026.5追加）<br>
+          → 具体イメージ：<strong>監禁男子の不登校の女子学生（詳細エピソードは下の⭐原体験ブロック参照）</strong>／今日好きに出たくてTikTok始めたJK／自分のコンテンツを見てAbemaに入りたいと思ってくれる若者</li>
+        <li>「<strong>カルト的熱狂・信者ができるコンテンツを作りたい</strong>」（2026.5追加）<br>
+          → 例：SASUKE（誰かの生きがい・人生になってしまうもの）</li>
+        <li>「<strong>AI超合理社会の中、これからも注目されるのは人間の非効率・非合理・意味不明さ・ムダ</strong>」（2026.5追加）</li>
+        <li>「<strong>ネクストブレイクしそうなアーティストを育成したい</strong>」（2026.5追加）</li>
+      </ul>
+    </div>
+
+    <div class="material">
+      <div class="material-label">クライアントワーク原則（仕事観として実装済み）</div>
+      <ul>
+        <li>「貴社」呼称の徹底（対等な立場のコンサルタント）</li>
+        <li>「2社で共同最適化」スタンス（受発注関係ではなく協業）</li>
+        <li>提案前セルフレビュー（因果関係/突っ込まれリスク/表現の鋭さ 3ステップ）</li>
+        <li>AI限界を正直に共有（過大期待を煽らない）</li>
+        <li>マスター情報源の単一固定（情報整理の精度担保）</li>
+      </ul>
+    </div>
+
+    <div class="material">
+      <div class="material-label">⭐ 原体験エピソード：Candee「監禁男子」の不登校の女子学生（B3「Next」の原動力にも直結）</div>
+      <p style="margin-top:8px;">
+        <strong>事実：</strong>Candee在籍時にプロデュースしたライブ配信コンテンツ「監禁男子」を配信していた頃、ある不登校の女子学生がTwitterで「監禁男子を見て元気をもらえた。少しずつ登校を再開してみようかな」とつぶやいているのを偶然見つけた。
+      </p>
+      <p style="margin-top:8px;">
+        <strong>意味づけ：</strong>仕事で一番嬉しかった瞬間。コンテンツが、見ず知らずの誰かの人生のスイッチを押せることを実感した原体験。「誰かの人生や生活に良い影響を与えるコンテンツを作りたい」という創作哲学（2026.5ビジョンメモ）の起点はここにある。同じ感情を、もっと大きなスケールで、もっと多くの人に届けたい——それが今後つくりたいコンテンツの原動力。
+      </p>
+      <p style="margin-top:8px; font-size:13px; color:var(--ink-soft);">
+        → B1骨子の5原則目候補（人を動かすコンテンツへの信念）／ B3「Next」の根拠エピソード／ A1（応募先別Why）でも「なぜこの仕事をするのか」の核として転用可能。
+      </p>
+    </div>
+
+    <div class="material">
+      <div class="material-label">⭐ 社内Annual Feedbackで「実践できている」と評価された行動原則</div>
+      <ul>
+        <li><strong>カスタマーセントリック</strong>（顧客起点）— Firework価値観で実践評価あり</li>
+        <li><strong>Win Together</strong>（共に勝つ）— Firework価値観で実践評価あり</li>
+        <li><strong>チームプレー、献身的に支える</strong> — 同僚Peer Reviewで言及</li>
+        <li><strong>AI学習による業務効率化</strong> — FY25 Annualで定性評価</li>
+        <li><strong>クライアントへの信頼力</strong> — FY25 Annualで定性評価</li>
+        <li><strong>文化的影響力</strong> — FY25 Annualで定性評価</li>
+      </ul>
+      <p style="margin-top:8px; font-size:12px; color:var(--ink-soft);">
+        → 自分で言う「信念」と、他者が言う「実践していること」が一致している項目は、ポートフォリオで最も説得力がある
+      </p>
+    </div>
+
+    <div class="material">
+      <div class="material-label">既出原則候補（content-draft.mdより）</div>
+      <ul>
+        <li>制作は属人化させない仕組みで強くする</li>
+        <li>クライアントの隣に座る、向かいではなく</li>
+        <li>映像は手段、目的は人を動かすこと</li>
+        <li>数字を持つクリエイティブを作る</li>
+        <li>越境することで武器が増える</li>
+      </ul>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1（未着手）</div>
+      <div class="q-text">これだけ素材があるなかで、ポートフォリオに載せる「3〜5原則」を選ぶなら？</div>
+      <div class="answer empty"><span class="answer-label">Answer（4-5原則目を決める対話で確定）</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2（未着手）</div>
+      <div class="q-text">「ムダこそデジタル時代に必要」「ラーメン二郎」の哲学はポートフォリオに入れる？</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge done">✓ 骨子5/5確定（5原則目=監禁男子エピソード）</span>
+    <span class="timestamp">last update: 2026-05-16 / 5原則目確定</span>
+  </div>
+</section>
+
+<!-- ============ SECTION EF（NEW） ============ -->
+<span class="anchor" id="ef"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">06</span>
+    <h2 class="sec-title">External Feedback</h2>
+    <span class="sec-subtitle">EF · 他者から見た自分</span>
+  </div>
+  <p class="sec-aim">
+    Netflix「coworkers が言う自分の長所・短所」質問への直接素材。自己評価ではなく他者評価のため、ポートフォリオでの説得力が極めて高い。
+  </p>
+
+  <!-- ===== 骨子（最終形・推薦案あり） ===== -->
+  <div class="final-copy">
+    <h3>External Feedback ブロック（公開ポートフォリオの「他者評価」セクションに転写）</h3>
+    <div class="copy-block">
+      <p style="font-size:13px; color:var(--ink-soft); margin-bottom:10px;">出典: 社内Annual Feedback（カントリーマネージャー × 同僚Peer Review）</p>
+
+      <div class="cand-card" style="border-left:4px solid var(--green);">
+        <div class="cand-head"><span class="cand-id" style="background:var(--green); color:#fff;">強み</span><span class="cand-title">他者評価4〜4.5（5段階）</span></div>
+        <div>好奇心・成長マインド <strong>4.5</strong> / 労働倫理 <strong>4</strong> / マインドセット <strong>4</strong></div>
+      </div>
+
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">引用</span><span class="cand-title">上司・同僚から評価された言葉（要厳選）</span></div>
+        <div>候補: 「カスタマーセントリック」「Win Together」「文化的影響力」「クリエイティブ力」「AI学習への努力」「チームプレー、献身的に支える」</div>
+      </div>
+
+      <div class="cand-card" style="border-left:4px solid var(--gold);">
+        <div class="cand-head"><span class="cand-id" style="background:var(--gold); color:#fff;">伸びしろ</span><span class="cand-title">指摘 → 既に行動で答えている対応</span></div>
+        <div>データドリブン → DMM AI CAMP修了・Claude Codeツール15+ ／ スケーラブル設計 → PS料金体系設計 ／ 戦略リーダーシップ → Q2 Offsite運営</div>
+      </div>
+    </div>
+
+    <h3>方針（公開範囲・伸びしろの扱い）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>公開範囲（TBD）：</strong> a)高評価のみ抜粋 / b)スコア全部出して誠実に / c)スコア出さず「言葉」だけ抽出 の3択から選定。
+      </div>
+      <div class="copy-note">
+        <strong>伸びしろの再フレーム：</strong>「指摘を素直に受け止め、既に具体的アクションで対応している」というストーリーで魅せる（Netflix最強型）。S3「定量的な課題解決・目標設定」と連動：例「デリバリー 3.5 → 4.5」を具体施策と紐付ける。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ：2回分のFeedback詳細 / 引用候補 / Q&amp;A未着手</span>
+      <span class="fold-meta">2025 mid year + FY25 Annual</span>
+    </summary>
+
+    <div class="feedback-card">
+      <div class="feedback-source">📊 2025 mid year review · 5段階評価</div>
+      <div class="feedback-score-row">
+        <span class="score-chip high"><span class="label">好奇心・成長マインド</span><span class="num">4.5</span></span>
+        <span class="score-chip mid"><span class="label">デリバリー</span><span class="num">3.5</span></span>
+        <span class="score-chip mid"><span class="label">強い推進力・勤勉さ</span><span class="num">3.5</span></span>
+      </div>
+      <div class="feedback-quote">カスタマーセントリック、Win Together、チームプレー、献身的に支える</div>
+      <p style="font-size:12px; color:var(--ink-soft); margin-top:8px;">
+        <strong>伸びしろ：</strong>データドリブン／プロジェクトリード・事業リード／Extreme Speed→データ推進力／提案施策を自ら主導／Problem Solvingの積極的改善策／客観的なビジネス視点／バランスをもって良さを突き抜けさせる／Greater China をもっとリード
+      </p>
+    </div>
+
+    <div class="feedback-card">
+      <div class="feedback-source">📊 FY25 Annual Feedback（2026.02.05）· 5段階評価</div>
+      <div class="feedback-score-row">
+        <span class="score-chip high"><span class="label">労働倫理</span><span class="num">4</span></span>
+        <span class="score-chip high"><span class="label">マインドセット</span><span class="num">4</span></span>
+        <span class="score-chip mid"><span class="label">創造的な解決</span><span class="num">3</span></span>
+        <span class="score-chip mid"><span class="label">期限内</span><span class="num">3</span></span>
+        <span class="score-chip"><span class="label">総合評価</span><span class="num">3</span></span>
+      </div>
+      <div class="feedback-quote">文化的影響力、クライアントへの信頼力、クリエイティブ力、AI学習によるスキルアセットの業務効率化への努力</div>
+      <p style="font-size:12px; color:var(--ink-soft); margin-top:8px;">
+        <strong>伸びしろ：</strong>データドリブンな裏付け・戦略（定量データ）／自分のいけているところをスケーラブルなフレームワーク・ビジネスモデルに落とし込む／チームビルディング、カルチャーにおける戦略リーダーシップ（部署横断型PJ）／スケーラブルなPS開発
+      </p>
+    </div>
+
+    <div class="note">
+      <strong>解釈：</strong>
+      強み（4-4.5）→ <strong>好奇心・労働倫理・マインドセット</strong>＝Netflix適合度の核となるパーソナリティ／
+      伸びしろ → <strong>データドリブン・戦略リーダーシップ・スケーラブル設計</strong>＝既に DMM AI CAMP修了 / Claude Code 自作ツール15+ / ICP Intelligence で「行動で答えている」状態
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1（未着手）</div>
+      <div class="q-text">この他者評価のうち、ポートフォリオに公開する範囲はどこまで？</div>
+      <div class="answer empty"><span class="answer-label">Answer（公開範囲a/b/cを選定）</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2（未着手）</div>
+      <div class="q-text">「伸びしろ」項目（データドリブン等）を「現在強化中の領域」として公開すると、どう書く？</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3（未着手）</div>
+      <div class="q-text">「上司・同僚から評価された言葉」を引用形式で見せると、どの言葉が一番効く？</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge wip">骨子枠+推薦内容あり · 公開範囲未確定</span>
+    <span class="timestamp">last update: 2026-05-16 / 骨子化</span>
+  </div>
+</section>
+
+<!-- ============ SECTION A3 ============ -->
+<span class="anchor" id="a3"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">07</span>
+    <h2 class="sec-title">References</h2>
+    <span class="sec-subtitle">A3 · 推薦コメント候補</span>
+  </div>
+  <p class="sec-aim">
+    第三者評価は転職市場で最強。匿名は信用度激減。3〜5件、実名＋役職で。
+  </p>
+
+  <!-- ===== 骨子（最終形・空枠） ===== -->
+  <div class="final-copy">
+    <h3>References 3〜5名（公開ポートフォリオ「推薦コメント」セクションに転写）</h3>
+    <div class="copy-block">
+      <p style="font-size:13px; color:var(--ink-soft); margin-bottom:10px;">推奨バランス：元上司1〜2 / 元部下or同僚1〜2 / クライアント1〜2</p>
+
+      <div class="cand-card" style="border-left:4px dashed var(--gold); background:var(--gold-soft);">
+        <div class="cand-head"><span class="cand-id" style="background:var(--gold); color:#fff;">TBD</span><span class="cand-rank">枠1（経営層）</span><span class="cand-title">Firework経営層から1名</span></div>
+        <div>候補: Kazuki Tajima（CM）／Nobu Muto／Toshiyuki Mishima</div>
+      </div>
+      <div class="cand-card" style="border-left:4px dashed var(--gold); background:var(--gold-soft);">
+        <div class="cand-head"><span class="cand-id" style="background:var(--gold); color:#fff;">TBD</span><span class="cand-rank">枠2（クライアント）</span><span class="cand-title">MCCMから1〜2名</span></div>
+        <div>候補: 佐藤静香さん／笹木さん／佐々木さん／横野さん</div>
+      </div>
+      <div class="cand-card" style="border-left:4px dashed var(--gold); background:var(--gold-soft);">
+        <div class="cand-head"><span class="cand-id" style="background:var(--gold); color:#fff;">TBD</span><span class="cand-rank">枠3（パートナー）</span><span class="cand-title">制作パートナーから1名</span></div>
+        <div>候補: 羽田さん（GIFTVOX）／寺田さん（メインD）／もーりー・森田・野中・関口・徳倉／Etoile Vision</div>
+      </div>
+    </div>
+
+    <h3>方針（依頼タイミング・公開判断）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>依頼タイミング：</strong>OPENRECや他社への応募が具体化した段階で個別に依頼（早すぎると意図が漏れる）。1回目は3名、応募が進めば追加で2名へ。
+      </div>
+      <div class="copy-note">
+        <strong>公開判断：</strong>各推薦者本人にコメント内容と公開範囲の最終確認をとる。実名+役職で出すか、「Firework前任CM」「MCCM元担当」のように匿名にするかは推薦者の意向次第。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ：候補リスト（全関係性） / Q&amp;A未着手</span>
+      <span class="fold-meta">業務内+過去キャリア</span>
+    </summary>
+
+    <div class="material">
+      <div class="material-label">候補（業務内で関係性が確立済み）</div>
+      <ul>
+        <li><strong>Firework Japan 経営層：</strong>Kazuki Tajima（CM）／Nobu Muto／Toshiyuki Mishima</li>
+        <li><strong>MCCM クライアント：</strong>佐藤静香さん／笹木さん／佐々木さん／横野さん</li>
+        <li><strong>制作パートナー：</strong>羽田さん（GIFTVOX）／寺田さん（メインD）／もーりー・森田・野中・関口・徳倉／Etoile Vision</li>
+        <li><strong>過去キャリア（要連絡）：</strong>ASOBISYSTEM（&amp;GIRLS協業）／Facebook×Jリーグ（3社協業窓口）／東北新社・ギークピクチュアズ・Gunosy（フリー時代）／RIZAP ENGLISH（5年継続）</li>
+      </ul>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1（未着手）</div>
+      <div class="q-text">推薦コメント依頼を出せる関係性は誰？（3〜5名選ぶ）</div>
+      <div class="answer empty"><span class="answer-label">Answer（3-5名を確定）</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2（未着手）</div>
+      <div class="q-text">依頼タイミングは？（今月中 / 来月中 / 段階的に）</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3（未着手）</div>
+      <div class="q-text">公開可否の判断は誰がする？（推薦者本人 / 自分判断）</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge empty">骨子枠のみ · 中身選定待ち</span>
+    <span class="timestamp">last update: 2026-05-16 / 骨子枠化</span>
+  </div>
+</section>
+
+<!-- ============ SECTION B3 ============ -->
+<span class="anchor" id="b3"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">08</span>
+    <h2 class="sec-title">Now / Next</h2>
+    <span class="sec-subtitle">B3 · 現在の学習と次の挑戦</span>
+  </div>
+  <p class="sec-aim">
+    Netflix「Why now」DMM「変化を学びと捉える」両方への対応。
+  </p>
+
+  <!-- ===== 骨子（最終形・推薦内容あり） ===== -->
+  <div class="final-copy">
+    <h3>Now（学習中・現在進行形）</h3>
+    <div class="copy-block">
+      <div class="cand-card" style="border-left:4px solid var(--green);">
+        <div class="cand-head"><span class="cand-id">学習</span><span class="cand-title">4本柱で継続中</span></div>
+        <div><strong>英語：</strong>RIZAP ENGLISH 5年継続、B1-B2 → B2-C1目標、1日1時間<br>
+        <strong>生成AI：</strong>DMM生成AI CAMP修了（2026.1）／Claude Code業務導入／Anthropic Claudeマスタークラス受講<br>
+        <strong>音楽：</strong>Studio One MCP自作／SUNO攻略／Studio One 5マニュアル12本自作<br>
+        <strong>お笑い：</strong>R-1出場・ライブハウス出演を2026年目標として明文化</div>
+      </div>
+    </div>
+
+    <h3>「指摘 → 既に行動で答えている」（EFセクションと連動）</h3>
+    <div class="copy-block">
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">行動</span><span class="cand-title">伸びしろ指摘への具体アクション</span></div>
+        <div>
+          <strong>データドリブン</strong>（FY25 Annualで2回指摘）<br>→ DMM AI CAMP修了／Claude Codeツール15+／ICP Intelligence（41社週次監視）<br>
+          <strong>創意工夫・課題解決力</strong>（2025 mid year 2.5/5）<br>→ Studio One MCP Server自作／Adobe MCP接続検証／自作Skills群<br>
+          <strong>スケーラブルPS開発</strong>（FY25 Annual）<br>→ PS料金原価一覧作成／自走1年vs5年伴走の同金額化設計
+        </div>
+      </div>
+    </div>
+
+    <h3>Next（原体験・3年・10年ゴール）</h3>
+    <div class="copy-block">
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">起点</span><span class="cand-title">なぜリアリティーショー・ドキュメンタリー領域を目指すのか</span></div>
+        <div>
+          Candee「監禁男子」を配信していた頃、不登校の女子学生がTwitterで「監禁男子を見て元気をもらえた。少しずつ登校を再開してみようかな」とつぶやいているのを見つけた。<strong>コンテンツが、見ず知らずの誰かの人生のスイッチを押せる</strong>——それを実感した瞬間が、今もキャリアの北極星。同じ感情を、もっと大きなスケールで、もっと多くの人に届け続けたい（B1原則5の原典）。
+        </div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">確定</span><span class="cand-rank">3年後</span><span class="cand-title">リアリティーショー・ドキュメンタリー領域で企画・制作に携わる</span></div>
+        <div>ベンチマーク5作品：<strong>SASUKE</strong>（20年以上続くロングラン・グローバル展開）／<strong>白と黒のスプーン</strong>（Netflix韓国・シリーズ化型）／<strong>あいの里</strong>（Netflix日本・特定層を深く刺す）／<strong>マネーの虎</strong>（起業挑戦者×投資家のガチンコ・ヒーローを生む型）／<strong>愛の貧乏脱出大作戦</strong>（修行で人生再起・誰かの人生に直接介入する型）<br>
+        いずれも「熱狂的なファンを生むコンテンツ」「誰かの人生に良い影響を与える」の代表例。A2 Ch.4「熱狂を作る人」の具体ドメイン、上記「起点」の延長線。</div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">確定</span><span class="cand-rank">10年後</span><span class="cand-title">野望：海外でも通用する日本発のコンテンツ／後世に語り継がれるコンテンツを作る</span></div>
+        <div>参照：<strong>トリビアの泉</strong>／<strong>とんねるずのみなさんのおかげでした</strong> のような、世代を超えて語り継がれる番組。<br>
+        単に視聴数を取るだけでなく、「カルト的熱狂・信者ができるコンテンツ」を作る。AI時代の超合理化が進むほど、人間の非合理・非効率・意味不明さ・ムダこそが価値になるという仮説。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ：素材4層（業界関心 / 強化中領域 / 趣味の本気度）</span>
+      <span class="fold-meta">3年後/10年後 Q&amp;A未着手</span>
+    </summary>
+
+    <div class="material">
+      <div class="material-label">業界関心領域・やってみたいこと（ビジョンメモから）</div>
+      <ul>
+        <li><strong>リアリティーショー・ドキュメンタリー領域</strong>（ベンチマーク5作品：SASUKE／白と黒のスプーン／あいの里／マネーの虎／愛の貧乏脱出大作戦）— 3年ゴールとして確定</li>
+        <li>データドリブンなコンテンツ改善</li>
+        <li>コンテンツ × リアルイベント（オンライン視聴の決勝戦などをオフラインに持っていく）</li>
+        <li>ライブ配信 → 大事な瞬間（決勝戦など）の生中継／NoNoGirls的な最大瞬間風速を活かす</li>
+        <li>スピリチュアル × リアリティーショー</li>
+        <li>人体実験 × リアリティーショー</li>
+        <li>フェイクドキュメンタリー（参照：HENJIN）</li>
+        <li>影武流・戦闘術など「最強を決める」企画</li>
+        <li>一社提供・◯社全面協力など、新しいビジネスモデルとの組み合わせ</li>
+        <li>ネクストブレイクしそうなアーティストの育成・発掘</li>
+        <li>動画コマースのグローバル展開</li>
+        <li>AIによる制作プロセス革新</li>
+        <li>大手企業のデジタルコンテンツ内製化</li>
+        <li>ライブコマースのマネタイズ構造</li>
+        <li><strong>コネクテッドコマースで動画アセットを持たない企業へのクリエイティブ開発</strong>（2025 mid year で関心領域として明示）</li>
+        <li><strong>Greater China 市場のリード</strong>（FY25でリード強化を期待されている領域）</li>
+      </ul>
+    </div>
+
+    <div class="material">
+      <div class="material-label">⭐ 現在強化中の領域（社内Annual Feedbackで認識した伸びしろ → 行動）詳細</div>
+      <ul>
+        <li><strong>データドリブンな裏付け・戦略</strong>（FY25 Annualで2回指摘）<br>→ DMM生成AI CAMP修了（2026.1）／自作Claude Codeツール15以上／Firework ICP Intelligence System自作（41社週次監視）／LS分析レポート自動効率化（Gemini API×GAS）／LSコメント分析ツール（Python+OpenAI GPT-5 mini）</li>
+        <li><strong>創意工夫・課題解決力（難解な課題への解決力）</strong>（2025 mid year 2.5/5）<br>→ Studio One MCP Server自作／Adobe MCP接続検証／自作Skills群（estimate-profit-sheet-builder / gas-sheets-editor）</li>
+        <li><strong>プロジェクトリード・事業リード（自ら主導）</strong><br>→ MCCM「70分以内縛り」独自KPI設計を主導／Q2 Offsite運営責任者として経営層4名と並列で意思決定</li>
+        <li><strong>客観的なビジネス視点</strong>（Kazukiさん指摘）<br>→ Starbucks FY27年間¥22.86M売上・粗利率23.7%を1人で設計／ICP 41社の財務・戦略分析を週次監視</li>
+        <li><strong>スケーラブルなPS開発</strong>（FY25 Annual で明示）<br>→ PS_サービス料金原価一覧 作成／内製化前提の料金体系設計／自走プランvs5年伴走の同金額化を検討中</li>
+        <li><strong>部署横断型プロジェクト・チームビルディング戦略リーダーシップ</strong>（FY25 Annual で明示）<br>→ Q2 Offsite運営／Firework Reporting Kit プラグイン化で社内ナレッジ横展開</li>
+      </ul>
+    </div>
+
+    <div class="material">
+      <div class="material-label">趣味の本気度（証拠）</div>
+      <ul>
+        <li>自作Webアプリ（Supabase+Vercel）— heroes-journal</li>
+        <li>動画企画アイデア100本超</li>
+        <li>作曲アイデア50本超</li>
+        <li>三本柱：会社員＋不動産投資（横浜市神奈川区）＋事業所得</li>
+      </ul>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1（未着手）</div>
+      <div class="q-text">他に学習中・研究中のものはある？（読んでる本、参加してる勉強会、追ってる業界トピック）</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2（未着手）</div>
+      <div class="q-text">3年後にやりたい具体プロジェクトは？</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3（未着手）</div>
+      <div class="q-text">10年後のキャリアゴール、なぜそれをやりたいのか？</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge done">骨子確定：Now+行動+3年（リアリティ5作品ベンチマーク）+10年（野望：海外通用・後世に残る）</span>
+    <span class="timestamp">last update: 2026-05-16 / 骨子化</span>
+  </div>
+</section>
+
+<!-- ============ SECTION A1 ============ -->
+<span class="anchor" id="a1"></span>
+<section>
+  <div class="sec-head">
+    <span class="sec-num">09</span>
+    <h2 class="sec-title">Why This Company</h2>
+    <span class="sec-subtitle">A1 · 応募先別ステートメント</span>
+  </div>
+  <p class="sec-aim">
+    AbemaTV採用担当が最も深掘りする質問への決定打。応募先別に最低3パターン。
+  </p>
+
+  <!-- ===== 骨子（最終形・空枠） ===== -->
+  <div class="final-copy">
+    <h3>Why This Company ステートメント（応募先別・300字×N社）</h3>
+    <div class="copy-block">
+      <p style="font-size:13px; color:var(--ink-soft); margin-bottom:10px;">テンプレート構造（4文）：自分の希少性 → 会社の事業課題理解 → 自分が何ができるか → なぜ今この挑戦か</p>
+
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">叩き台</span><span class="cand-rank">本命1</span><span class="cand-title">DMM（最マッチ度1位・60事業並行 × 9業界並行の思想一致）</span></div>
+        <div style="font-size:14px; line-height:1.7;">
+          DMMの「60事業並行」モデルと、私の「9業界×大手企業同時運営」のキャリアは思想として完全に同じです。MCCM案件で、私は1人で2年間、ドラッグ業界の事業をゼロから累計144万視聴・前年比+62%・協賛19社まで持っていきました。これは「番組制作」ではなく「コンテンツを起点に事業をマネタイズする一気通貫の実装」です。DMM FILMSの実写量産フェーズ、DMM TVの2.5次元ライブ配信のマネタイズ横展開、いずれも私がMCCMで実装した「ライブ×購買×協賛」の構造を当てはめられる領域。担当領域に留まらないことが当然の文化で、最大の価値を出せると考えています。
+        </div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">叩き台</span><span class="cand-rank">本命2</span><span class="cand-title">Netflix Japan（2026 WBC独占で日本史上最大視聴記録・登録者1,000万人突破）</span></div>
+        <div style="font-size:14px; line-height:1.7;">
+          Netflixが10M突破後の次フェーズで必要なのは、「日本の制作文脈を世界規模の意思決定言語に翻訳できる現場プロデューサー」だと考えています。私は16年で地上波→Web→事業責任者と渡り歩き、9業界の大手と同時並行でゼロから事業を立ち上げてきました。MCCMでは2年で累計144万視聴、前年比+62%、協賛19社を1人で実装。テレビ的制作勘と、Web事業のKPI勘と、AI実装の生産性勘を1人で行き来できる位置にいます。WBCの成功が示したのは「日本独自フォーマットでも世界に届く」という命題。MAPPA／東宝とのCo-Creation時代に、現場の翻訳者として貢献したい。
+        </div>
+      </div>
+      <div class="cand-card" style="border-left:4px solid var(--accent);">
+        <div class="cand-head"><span class="cand-id">叩き台</span><span class="cand-rank">本命3</span><span class="cand-title">AbemaTV（2026年Q1単体黒字達成・社長交代で編成戦略人材を増強中）</span></div>
+        <div style="font-size:14px; line-height:1.7;">
+          開局10年で初の黒字化を達成し、山内新体制で「利益拡大フェーズ」へ転換するABEMAに、いま必要なのは「番組制作の現場勘」と「事業マネタイズの実装力」を1人で持つプロデューサーだと考えています。私は16年でテレビ→Web→事業責任者と渡り歩き、FireworkではMCCM案件を2年で累計144万視聴・前年比+62%・協賛19社まで持っていきました。これは「番組制作」と「事業立ち上げ」を分けずに同時実装した結果です。Studio Kurmの一気通貫マネタイズ、Project PRISMationの新クリエイター発掘、いずれも私が9業界の大手と並行で実装してきた構造の延長線上。ABEMAの第2期、社会的インパクト創出のフェーズに、越境者として貢献したい。
+        </div>
+      </div>
+      <div class="cand-card" style="border-left:4px dashed var(--ink-mute); background:var(--paper);">
+        <div class="cand-head"><span class="cand-id" style="background:var(--ink-mute); color:#fff;">候補</span><span class="cand-rank">+α</span><span class="cand-title">OPENREC（検討中）</span></div>
+        <div>2023年からDONUTSグループ子会社運営。現職840万円事業責任者からのダウンシフト覚悟（S2 P2と連動）</div>
+      </div>
+    </div>
+
+    <h3>方針（順序と深さ）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>まず1社（DMM）から書く：</strong>「ここが課題」「自分なら解けそう」が最も具体的に書ける本命から固める。型ができれば他社展開は早い。
+      </div>
+      <div class="copy-note">
+        <strong>Why now の核：</strong>「5年経った事業責任者から、なぜ次に動くのか」を明確化。「番組制作にたずさわりたい」「ラーメン二郎的な熱狂を作りたい」という本人の Why と接続する。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ：テンプレ4文構造 / 業界分析素材 / Q&amp;A未着手</span>
+      <span class="fold-meta">target-companies.md と連動</span>
+    </summary>
+
+    <div class="material">
+      <div class="material-label">テンプレート構造（4文）</div>
+      <ul>
+        <li>1文目：自分の希少性（◯◯と◯◯と◯◯の3つを持つ人は少ない）</li>
+        <li>2文目：その会社の事業課題の理解（具体的に）</li>
+        <li>3文目：自分がそこで何ができるか（具体的アクション）</li>
+        <li>4文目：なぜ今この挑戦か（Why now）</li>
+      </ul>
+    </div>
+
+    <div class="material">
+      <div class="material-label">既に持っている業界分析素材</div>
+      <ul>
+        <li><strong>Netflix/DMM/AbemaTV採用基準</strong>（research-findings.md：20本以上の一次資料から構造化済み）</li>
+        <li><strong>OPENREC業界分析</strong>（Twitch同接255万 vs OPENRECトップ数万、戦略シフトの理解）</li>
+        <li><strong>競合4社比較</strong>（資生堂・KANEBO・ロート製薬・アットコスメの動画コマース戦略を定量比較）</li>
+        <li><strong>ICP 41社の最新IR・施策・キーパーソン発言</strong>（Firework ICP Intelligence）</li>
+        <li><strong>worksheet-target-companies.md</strong>：大手6社の最新事業課題＋Whyステートメント草案（約16KB）</li>
+      </ul>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1（未着手）</div>
+      <div class="q-text">本気で応募候補に挙げているのは？（複数可）</div>
+      <div class="answer empty"><span class="answer-label">Answer</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2（未着手）</div>
+      <div class="q-text">各社で「ここが課題」「自分なら解けそう」と思っていることは？</div>
+      <div class="answer empty"><span class="answer-label">Answer（最初は1社分でいい）</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3（未着手）</div>
+      <div class="q-text">なぜ「今」転職するのか？</div>
+      <div class="answer empty"><span class="answer-label">Answer（5年経った事業責任者から、なぜ次に動くのか）</span></div>
+    </div>
+  </details>
+
+  <div class="status-row">
+    <span class="badge wip">本命3社（DMM/Netflix/AbemaTV）叩き台埋め込み済 · OPENREC候補TBD · 本人推敲で確定</span>
+    <span class="timestamp">last update: 2026-05-16 / 本命3社叩き台埋め込み</span>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ --><!-- ============ FOOTER ============ -->
+<footer>
+  Portfolio素材ワークシート ／ 石島慎也 ／ Generated 2026-05-16<br>
+  抽出元：02_Claude_Code全体（プライベート・仕事・ナレッジ・自作ツール・OffSite）
+</footer>
+
+</body>
+</html>
