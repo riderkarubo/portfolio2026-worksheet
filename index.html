@@ -301,6 +301,119 @@
     margin-top: 8px; font-style: italic;
   }
 
+  /* ============ FINAL COPY (骨子) ============ */
+  .final-copy {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin: 20px 0 16px;
+    position: relative;
+  }
+  .final-copy::before {
+    content: '📌 ポートフォリオ最終形（公開する骨子）';
+    position: absolute; top: -11px; left: 18px;
+    background: var(--accent); color: #fff;
+    padding: 3px 12px; border-radius: 3px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  }
+  .final-copy h3 {
+    font-size: 14px; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.04em;
+    margin: 18px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .final-copy h3:first-of-type { margin-top: 4px; }
+  .final-copy .copy-block {
+    margin: 10px 0 18px;
+  }
+  .final-copy .copy-note {
+    font-size: 12.5px; color: var(--ink-soft);
+    background: var(--paper); padding: 8px 12px;
+    border-left: 2px solid var(--accent-soft);
+    border-radius: 0 3px 3px 0;
+    margin: 8px 0;
+  }
+  .final-copy .copy-tbd {
+    display: inline-block;
+    padding: 2px 8px; font-size: 11px;
+    background: var(--gold-soft); color: var(--gold);
+    border-radius: 3px; font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  /* Stats card grid (S3最終形) */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .stat-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .stat-card .stat-num {
+    font-size: 24px; font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+    display: block;
+  }
+  .stat-card .stat-num.tbd { color: var(--gold); font-size: 18px; }
+  .stat-card .stat-label {
+    font-size: 12px; color: var(--ink); margin-top: 6px;
+    line-height: 1.3;
+  }
+  .stat-card .stat-sub {
+    font-size: 10px; color: var(--ink-mute); margin-top: 3px;
+    line-height: 1.3;
+  }
+
+  /* ============ MEMO / IDEA FOLD ============ */
+  .material-fold {
+    margin: 14px 0;
+    background: var(--paper);
+    border: 1px dashed var(--rule);
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .material-fold summary {
+    cursor: pointer;
+    padding: 12px 18px;
+    list-style: none;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12.5px;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .material-fold summary:hover { background: var(--paper-line); }
+  .material-fold summary::-webkit-details-marker { display: none; }
+  .material-fold .fold-icon {
+    color: var(--ink-mute); font-size: 10px;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .material-fold[open] .fold-icon { transform: rotate(90deg); }
+  .material-fold .fold-label {
+    font-weight: 700; color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+  .material-fold .fold-meta {
+    margin-left: auto; color: var(--ink-mute); font-size: 11px;
+    font-style: italic;
+  }
+  .material-fold > *:not(summary) {
+    padding: 0 18px 14px;
+  }
+  .material-fold .material {
+    margin: 14px 18px;
+  }
+
   /* ============ CANDIDATE RANK CARD (S1専用) ============ */
   .rank-section {
     margin: 22px 0 10px;
@@ -522,7 +635,7 @@
       <small>石島慎也 / Career Discovery 2026</small>
     </div>
     <div class="progress-wrap">
-      <span class="progress-dot done" id="dot-s3"></span>
+      <span class="progress-dot wip" id="dot-s3"></span>
       <span class="progress-dot done" id="dot-b2"></span>
       <span class="progress-dot done" id="dot-a2"></span>
       <span class="progress-dot wip" id="dot-s1"></span>
@@ -560,7 +673,7 @@
 <div class="toc">
   <div class="toc-title">10 sections · ordered by lightness</div>
   <div class="toc-list">
-    <a class="toc-item" href="#s3"><span class="toc-num">01</span><span class="toc-tag">S3</span><span class="toc-label">By the Numbers — 数字の棚卸し</span><span class="toc-status done">✓ 完了</span></a>
+    <a class="toc-item" href="#s3"><span class="toc-num">01</span><span class="toc-tag">S3</span><span class="toc-label">By the Numbers — 数字で語る</span><span class="toc-status">骨子4/5確定 · AI数字検討中</span></a>
     <a class="toc-item" href="#b2"><span class="toc-num">02</span><span class="toc-tag">B2</span><span class="toc-label">Niche Identity — 1行の自分宣言</span><span class="toc-status done">✓ 完了</span></a>
     <a class="toc-item" href="#a2"><span class="toc-num">03</span><span class="toc-tag">A2</span><span class="toc-label">Career Arc — 16年を3〜4章に</span><span class="toc-status done">✓ 完了</span></a>
     <a class="toc-item" href="#s1"><span class="toc-num">04</span><span class="toc-tag">S1</span><span class="toc-label">Decisions I Made — 私が下した判断</span><span class="toc-status">— TOP2確定 / 3-5位選定中</span></a>
@@ -588,139 +701,160 @@
   <div class="sec-head">
     <span class="sec-num">01</span>
     <h2 class="sec-title">By the Numbers</h2>
-    <span class="sec-subtitle">S3 · 数字の棚卸し</span>
+    <span class="sec-subtitle">S3 · 数字で語る</span>
   </div>
   <p class="sec-aim">
-    数字で語れる人＝採用される人。10〜15個の数字を1スクリーンに集約する。
+    数字で語れる人＝採用される人。ポートフォリオ Statsセクションに転写する骨子。
   </p>
 
-  <div class="material">
-    <div class="material-label">既に抽出された数字</div>
-    <table>
-      <tr><th>カテゴリ</th><th>指標</th><th>数字</th></tr>
-      <tr><td rowspan="5">MCCM 2025</td><td>ライブ累計視聴者</td><td><strong>275,403人</strong>（前年比+62%）</td></tr>
-      <tr><td>2年累計総視聴</td><td><strong>1,441,474人（約144万）</strong></td></tr>
-      <tr><td>ライブ平均</td><td>3,857 → <strong>5,860人/回</strong>（+52%）</td></tr>
-      <tr><td>協賛メーカー</td><td><strong>19社</strong></td></tr>
-      <tr><td>フローティング表示効果</td><td>1,277 → <strong>17,273人/月（13倍）</strong></td></tr>
-      <tr><td>Starbucks FY27</td><td>年間売上</td><td><strong>¥22,860,000</strong>（粗利率23.7%）</td></tr>
-      <tr><td rowspan="3">キャリア全体</td><td>キャリア年数</td><td><strong>16年</strong>（2011.4〜）</td></tr>
-      <tr><td>渡り歩いた会社</td><td><strong>6社</strong></td></tr>
-      <tr><td>Firework取引大手</td><td><strong>5社明記</strong>（ヤマダ・マツキヨ・Starbucks・イオン・Samsung）</td></tr>
-      <tr><td>並行案件</td><td>同時並行クライアント</td><td><strong>11社</strong>（9業界横断）</td></tr>
-      <tr><td>LiveShop! 時代</td><td>制作本数</td><td>月<strong>30〜60本</strong> / 最大<strong>14名チーム</strong></td></tr>
-      <tr><td>学習</td><td>RIZAP ENGLISH</td><td><strong>5年継続</strong>・B1-B2・1日1時間</td></tr>
-      <tr><td>自作ツール</td><td>Claude Code/GAS</td><td><strong>15以上</strong></td></tr>
-    </table>
+  <!-- ===== 骨子（最終形） ===== -->
+  <div class="final-copy">
+    <h3>Statsカード（公開ポートフォリオに直接転写）</h3>
+    <div class="copy-block">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">×3.6</span>
+          <div class="stat-label">売上成長</div>
+          <div class="stat-sub">事業責任者就任1年・前年比</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">+15%</span>
+          <div class="stat-label">粗利改善</div>
+          <div class="stat-sub">前年比</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">9業界</span>
+          <div class="stat-label">大手企業並行</div>
+          <div class="stat-sub">Firework現職</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">16年 / 6社</span>
+          <div class="stat-label">越境キャリア</div>
+          <div class="stat-sub">TV→Web→音楽→コマース</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num tbd">TBD</span>
+          <div class="stat-label">AI関連の代表数字</div>
+          <div class="stat-sub">候補出し未着手（下メモ参照）</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>方針（公開時の定型文・注記）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        <strong>公開方針：</strong> Firework就任1年の3指標(×3.6/+15%/33%)とキャリア横断(9業界/16年6社)を中心に。個別クライアント(MCCM/Starbucks/ヤマダ等)の定量は出さず、社名のみ列挙。
+      </div>
+      <div class="copy-note">
+        <strong>本人定型文（Firework部分）：</strong> ライブ配信・ショート動画を活用した「動画コマース」領域でCreative Strategistとして従事。2024年にCreative Teamの事業責任者に就任後、事業計画・営業・クリエイティブを統括し、<strong>就任1年で売上を前年比3.6倍に拡大</strong>。AI活用による業務効率化・新サービス(コンサル・内製化支援)の開発・制作パートナーとの単価交渉により、<strong>粗利+15%</strong>も同時に実現。
+      </div>
+      <div class="copy-note">
+        <strong>NewBiz構成比 33%：</strong> 説明が要る数字のため Statsカードではなく Career Firework詳細内に小さく配置。
+      </div>
+    </div>
+
+    <h3>伸びしろ → 定量的な課題解決・目標設定（EFセクションと連動）</h3>
+    <div class="copy-block">
+      <div class="copy-note">
+        社内Annual Feedback の中スコア項目を「次サイクルでの定量目標」として明示する。<br>
+        例：<strong>デリバリー 3.5 → 4.5</strong>（◯◯施策で測定）／<strong>強い推進力 3.5 → 4.5</strong>／<strong>創造的解決 3.0 → 4.0</strong>／<strong>期限内 3.0 → 4.5</strong><br>
+        → 「課題を定量で握って改善運用している」運用力をそのままポートフォリオで見せる。
+      </div>
+    </div>
   </div>
 
-  <div class="material">
-    <div class="material-label">⭐ 公開する数字（確定 / Fireworkのみ具体・クライアント案件は非公開）</div>
-    <table>
-      <tr><th>カテゴリ</th><th>指標</th><th>数字</th></tr>
-      <tr><td rowspan="3" style="background:var(--accent-soft);"><strong>Firework Japan<br>事業責任者として<br>就任1年の成果</strong></td><td>売上成長（前年比）</td><td><strong style="color:var(--accent); font-size:16px;">×3.6</strong>（2024→2025）</td></tr>
-      <tr><td>粗利改善（前年比）</td><td><strong style="color:var(--accent); font-size:16px;">+15%</strong></td></tr>
-      <tr><td>NewBiz構成比（Japan Team全体売上）</td><td><strong style="color:var(--accent); font-size:16px;">33%</strong></td></tr>
-      <tr><td rowspan="4">キャリア全体</td><td>キャリア年数</td><td><strong>16年</strong>（2011.4〜）</td></tr>
-      <tr><td>渡り歩いた会社</td><td><strong>6社</strong></td></tr>
-      <tr><td>業界横断経験</td><td>TV / Web / 音楽 / コマース <strong>4領域</strong></td></tr>
-      <tr><td>同時並行クライアント</td><td><strong>9業界の大手企業</strong>を並行担当</td></tr>
-      <tr><td>LiveShop! 時代<br>(Candee)</td><td>制作本数 / チーム規模</td><td>月<strong>30〜60本</strong> / 最大<strong>14名</strong></td></tr>
-      <tr><td>学習・自己投資</td><td>英語学習</td><td>RIZAP ENGLISH <strong>5年継続</strong>（B1-B2）</td></tr>
-      <tr><td>AI活用</td><td>自作ツール</td><td>Claude Code / GAS <strong>15以上</strong></td></tr>
-      <tr><td>資格</td><td>DMM生成AI CAMP</td><td>生成AIエンジニアコース修了（2026.1）</td></tr>
-    </table>
-    <p style="margin-top:10px; padding:10px 12px; background:var(--accent-soft); border-radius:3px; font-size:13px;">
-      <strong style="color:var(--accent);">本人による定型文（Firework部分）：</strong><br>
-      ライブ配信・ショート動画を活用した「動画コマース」領域でCreative Strategistとして従事。2024年にCreative Teamの事業責任者に就任後、事業計画・営業・クリエイティブを統括し、<strong>就任1年で売上を前年比3.6倍に拡大</strong>。AI活用による業務効率化・新サービス（コンサル・内製化支援）の開発・制作パートナーとの単価交渉により、<strong>粗利+15%</strong>も同時に実現。
-    </p>
-    <p style="margin-top:8px; font-size:12px; color:var(--ink-soft);">
-      ※ 個別クライアント（MCCM / Starbucks / ヤマダ等）の定量情報は<strong>公開しない</strong>方針。社名のみ列挙（既に公開ポートフォリオでも社名は出ている）。
-    </p>
-  </div>
+  <!-- ===== 検討メモ・候補・アイデア（折り畳み） ===== -->
+  <details class="material-fold">
+    <summary>
+      <span class="fold-icon">▶</span>
+      <span class="fold-label">検討メモ・候補・アイデア</span>
+      <span class="fold-meta">公開する数字テーブル / 評価スコア / Q&amp;A履歴</span>
+    </summary>
 
-  <div class="material">
-    <div class="material-label">他者評価スコア（社内Annual Feedback・カントリーマネージャー × 同僚Peer Review）</div>
-    <table>
-      <tr><th>評価項目</th><th>スコア</th><th>出典</th></tr>
-      <tr><td>好奇心・成長マインド</td><td><strong style="color:var(--green)">4.5 / 5</strong></td><td>2025 mid year</td></tr>
-      <tr><td>労働倫理</td><td><strong style="color:var(--green)">4 / 5</strong></td><td>FY25 Annual</td></tr>
-      <tr><td>マインドセット</td><td><strong style="color:var(--green)">4 / 5</strong></td><td>FY25 Annual</td></tr>
-      <tr><td>デリバリー</td><td>3.5 / 5</td><td>2025 mid year</td></tr>
-      <tr><td>強い推進力・勤勉さ（粘り強い姿勢）</td><td>3.5 / 5</td><td>2025 mid year</td></tr>
-      <tr><td>創造的な解決</td><td>3 / 5</td><td>FY25 Annual</td></tr>
-      <tr><td>期限内</td><td>3 / 5</td><td>FY25 Annual</td></tr>
-      <tr><td>創意工夫・課題解決力</td><td>2.5 / 5</td><td>2025 mid year（伸びしろ）</td></tr>
-    </table>
-    <p style="margin-top:8px; font-size:12px; color:var(--ink-soft);">
-      → 高評価3項目（4.5/4/4）は<strong>そのままポートフォリオで使える数字</strong>。低スコア項目は <strong>EFセクション</strong>で「現在伸ばしている領域」として再フレーム
-    </p>
-  </div>
+    <div class="material">
+      <div class="material-label">公開する数字（テーブル形式・骨子の元データ）</div>
+      <table>
+        <tr><th>カテゴリ</th><th>指標</th><th>数字</th></tr>
+        <tr><td rowspan="3" style="background:var(--accent-soft);"><strong>Firework Japan<br>事業責任者として<br>就任1年の成果</strong></td><td>売上成長(前年比)</td><td><strong style="color:var(--accent); font-size:16px;">×3.6</strong>(2024→2025)</td></tr>
+        <tr><td>粗利改善(前年比)</td><td><strong style="color:var(--accent); font-size:16px;">+15%</strong></td></tr>
+        <tr><td>NewBiz構成比(Japan Team全体売上)</td><td><strong style="color:var(--accent); font-size:16px;">33%</strong></td></tr>
+        <tr><td rowspan="3">キャリア全体</td><td>キャリア年数</td><td><strong>16年</strong>(2011.4〜)</td></tr>
+        <tr><td>渡り歩いた会社</td><td><strong>6社</strong></td></tr>
+        <tr><td>業界横断経験</td><td>TV / Web / 音楽 / コマース <strong>4領域</strong></td></tr>
+        <tr><td>LiveShop! 時代<br>(Candee)</td><td>制作本数 / チーム規模</td><td>月<strong>30〜60本</strong> / 最大<strong>14名</strong></td></tr>
+        <tr><td>学習・自己投資</td><td>英語学習</td><td>RIZAP ENGLISH <strong>5年継続</strong>(B1-B2)</td></tr>
+        <tr><td>資格</td><td>DMM生成AI CAMP</td><td>生成AIエンジニアコース修了(2026.1)</td></tr>
+      </table>
+    </div>
 
-  <div class="q-block">
-    <div class="q-label">Question 1</div>
-    <div class="q-text">公開してOKな数字／伏せたい数字を切り分けるとどうなる？</div>
-    <div class="hint">例：「Starbucks ¥22.86M」→「年間2,000万円規模・粗利25%水準」のように抽象化する選択肢あり</div>
-    <div class="answer done">
-      <span class="answer-label">Answer · 2026-05-16</span>
-      <strong>方針：各クライアントの定量情報は不要。Fireworkのみ具体的な数字を入れる。</strong>
-      <ul style="margin-top:10px; padding-left:20px;">
-        <li><strong>公開する数字（Firework Japan・事業責任者として就任1年の成果）：</strong></li>
-        <li style="margin-left:14px;">売上成長 <strong>×3.6</strong>（前年比、2024→2025）</li>
-        <li style="margin-left:14px;">粗利改善 <strong>+15%</strong>（前年比）</li>
-        <li style="margin-left:14px;">NewBiz構成比 <strong>33%</strong>（Japan Team全体売上に占める比率）</li>
-        <li><strong>非公開（個別クライアントの定量情報）：</strong></li>
-        <li style="margin-left:14px;">MCCM 144万視聴・協賛19社・配信回数等</li>
-        <li style="margin-left:14px;">Starbucks ¥22.86M・粗利23.7%</li>
-        <li style="margin-left:14px;">ヤマダデンキ 月次原価</li>
-        <li style="margin-left:14px;">→ 社名のみ列挙はOK（既に公開ポートフォリオでも社名は出ている）</li>
-        <li><strong>公開する数字（キャリア全体・自己投資）：</strong></li>
-        <li style="margin-left:14px;">16年 / 6社 / 4領域横断 / 9業界の大手企業並行</li>
-        <li style="margin-left:14px;">LiveShop! 月30〜60本・最大14名チーム</li>
-        <li style="margin-left:14px;">RIZAP ENGLISH 5年継続 / 自作ツール15以上 / DMM生成AI CAMP修了</li>
+    <div class="material">
+      <div class="material-label">他者評価スコア（社内Annual Feedback × カントリーマネージャー＋同僚Peer Review）→ 定量的な課題解決・目標設定の素材として活用</div>
+      <table>
+        <tr><th>評価項目</th><th>スコア</th><th>出典</th><th>位置づけ</th></tr>
+        <tr><td>好奇心・成長マインド</td><td><strong style="color:var(--green)">4.5 / 5</strong></td><td>2025 mid year</td><td>強み（高評価）</td></tr>
+        <tr><td>労働倫理</td><td><strong style="color:var(--green)">4 / 5</strong></td><td>FY25 Annual</td><td>強み（高評価）</td></tr>
+        <tr><td>マインドセット</td><td><strong style="color:var(--green)">4 / 5</strong></td><td>FY25 Annual</td><td>強み（高評価）</td></tr>
+        <tr><td>デリバリー</td><td>3.5 / 5</td><td>2025 mid year</td><td>定量目標化の対象（→4.5）</td></tr>
+        <tr><td>強い推進力・勤勉さ（粘り強い姿勢）</td><td>3.5 / 5</td><td>2025 mid year</td><td>定量目標化の対象（→4.5）</td></tr>
+        <tr><td>創造的な解決</td><td>3 / 5</td><td>FY25 Annual</td><td>定量目標化の対象（→4.0）</td></tr>
+        <tr><td>期限内</td><td>3 / 5</td><td>FY25 Annual</td><td>定量目標化の対象（→4.5）</td></tr>
+      </table>
+    </div>
+
+    <div class="material">
+      <div class="material-label">TODO: 5位「AI関連の代表数字」候補出し</div>
+      <ul>
+        <li>旧案「自作ツール15以上」 → 数字の根拠説明が要る／盛った印象になりやすい → 棚上げ</li>
+        <li>候補A: 「AI活用で◯時間削減」（例: 月100h+削減）</li>
+        <li>候補B: 「AI×WORK 15h→2h・30h→8h」（既出AI×WORKブロックの主成果と直接連動）</li>
+        <li>候補C: 「DMM生成AI CAMP修了」（資格・カテゴリ）</li>
+        <li>候補D: 「AI起点の新規サービス◯件立ち上げ」</li>
       </ul>
     </div>
-  </div>
 
-  <div class="q-block">
-    <div class="q-label">Question 2</div>
-    <div class="q-text">この中で「これは特に誇れる」TOP5は？</div>
-    <div class="answer done">
-      <span class="answer-label">Answer · 2026-05-16</span>
-      <strong>確定 TOP5（ポートフォリオStatsセクションで大きく見せる）</strong>
-      <table style="margin-top:10px;">
-        <tr><th style="width:40px;">順位</th><th>数字</th><th>役割</th></tr>
-        <tr><td><strong>1</strong></td><td><strong style="color:var(--accent); font-size:16px;">×3.6</strong> 売上成長<br><span style="font-size:11px; color:var(--ink-mute);">事業責任者就任1年・前年比</span></td><td>「Director / 事業責任者」の肩書を裏付ける唯一無二の数字</td></tr>
-        <tr><td><strong>2</strong></td><td><strong style="color:var(--accent); font-size:16px;">+15%</strong> 粗利改善<br><span style="font-size:11px; color:var(--ink-mute);">前年比</span></td><td>売上だけでなく「儲かる事業に変えた」証拠</td></tr>
-        <tr><td><strong>3</strong></td><td><strong style="color:var(--accent); font-size:16px;">9業界</strong> 大手企業並行<br><span style="font-size:11px; color:var(--ink-mute);">Firework現職</span></td><td>クライアントワークの幅と信頼の証拠</td></tr>
-        <tr><td><strong>4</strong></td><td><strong style="color:var(--accent); font-size:16px;">16年 / 6社</strong> 越境キャリア<br><span style="font-size:11px; color:var(--ink-mute);">TV→Web→音楽→コマース 4領域</span></td><td>越境型キャリアの厚み（3要素1枠） </td></tr>
-        <tr><td><strong>5</strong></td><td><strong style="color:var(--accent); font-size:16px;">15+</strong> 自作AI/GASツール<br><span style="font-size:11px; color:var(--ink-mute);">Claude Code/GAS</span></td><td>「AIを使う人」ではなく「AIで作る人」の証拠</td></tr>
-      </table>
-      <p style="margin-top:10px; font-size:12px; color:var(--ink-soft);">
-        ※ 既存ポートフォリオ Stats は4カード構成。<strong>1〜4位の4枠</strong>で表示するか、レイアウト変更して5枠にするかは実装時に判断。<br>
-        ※ NewBiz構成比 33% は「説明が要る数字」のため、Stats ではなく Career の Firework 詳細ページ内に小さく配置推奨。
-      </p>
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q1</div>
+      <div class="q-text">公開してOKな数字／伏せたい数字を切り分けるとどうなる？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16</span>
+        <strong>方針：各クライアントの定量情報は不要。Fireworkのみ具体的な数字を入れる。</strong>
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li><strong>公開する数字（Firework Japan・事業責任者として就任1年の成果）：</strong></li>
+          <li style="margin-left:14px;">売上成長 <strong>×3.6</strong>（前年比、2024→2025）</li>
+          <li style="margin-left:14px;">粗利改善 <strong>+15%</strong>（前年比）</li>
+          <li style="margin-left:14px;">NewBiz構成比 <strong>33%</strong>（Japan Team全体売上に占める比率）</li>
+          <li><strong>非公開（個別クライアントの定量情報）：</strong></li>
+          <li style="margin-left:14px;">MCCM 144万視聴・協賛19社・配信回数等</li>
+          <li style="margin-left:14px;">Starbucks ¥22.86M・粗利23.7%</li>
+          <li style="margin-left:14px;">ヤマダデンキ 月次原価</li>
+          <li style="margin-left:14px;">→ 社名のみ列挙はOK（既に公開ポートフォリオでも社名は出ている）</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="q-block">
-    <div class="q-label">Question 3</div>
-    <div class="q-text">まだ言語化できていない数字はある？（例：累計担当番組数、累計マネジメント人数、累計配信時間など）</div>
-    <div class="answer done">
-      <span class="answer-label">Answer · 2026-05-16</span>
-      <strong>判断：突っ込んだ追加数字は出さない方針。</strong>
-      <p style="margin-top:8px;">
-        累計番組数・累計マネジメント人数・累計配信時間などは正確な数字を出しにくいため、推測ベースの「盛った数字」になるリスクがある。Q2で確定した <strong>TOP5（×3.6 / +15% / 9業界 / 16年6社 / 自作15+）</strong> で勝負する。
-      </p>
-      <p style="margin-top:8px; font-size:12px; color:var(--ink-soft);">
-        → 「正確に答えられる数字だけ出す」スタンス自体が、提案前セルフレビューを徹底する Issy さんの仕事観（B1のクライアントワーク原則）と整合している。
-      </p>
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q2</div>
+      <div class="q-text">この中で「これは特に誇れる」TOP5は？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16（5位は再検討中・骨子のTBD参照）</span>
+        <p>1位 ×3.6 / 2位 +15% / 3位 9業界 / 4位 16年6社 / <strong>5位 AI関連（要再選定）</strong></p>
+      </div>
     </div>
-  </div>
+
+    <div class="q-block">
+      <div class="q-label">過去Q&amp;A · Q3</div>
+      <div class="q-text">まだ言語化できていない数字はある？</div>
+      <div class="answer done">
+        <span class="answer-label">Answer · 2026-05-16</span>
+        <strong>判断：突っ込んだ追加数字は出さない方針。</strong>
+        <p style="margin-top:8px;">累計番組数・累計マネジメント人数・累計配信時間などは正確な数字を出しにくいため、推測ベースの「盛った数字」になるリスクがある。骨子の4枠+1枠で勝負する。</p>
+      </div>
+    </div>
+  </details>
 
   <div class="status-row">
-    <span class="badge done">DONE · 3/3</span>
-    <span class="timestamp">last update: 2026-05-16</span>
+    <span class="badge wip">REFINING · 骨子4/5確定・5位検討中</span>
+    <span class="timestamp">last update: 2026-05-16 / 骨子構造リビルド</span>
   </div>
 </section>
 
