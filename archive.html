@@ -747,11 +747,25 @@
       </div>
     </div>
 
-    <h3>🟡 P3: Self-Coaching の実装証拠 → worksheet に残置</h3>
+    <h3>✅ P3: Self-Coaching の実装証拠 → 非採用で完了</h3>
     <div class="copy-block">
+      <div class="cand-card" style="border-left:4px solid var(--green); background:var(--green-soft);">
+        <div class="cand-head">
+          <span class="cand-id" style="background:var(--green); color:#fff;">P3</span>
+          <span class="cand-title">Self-Coaching ブロックごと公開ポートフォリオから削除</span>
+        </div>
+        <div>
+          <strong>判断:</strong> 3ステップ概念図のみでは「絵に描いた餅」の懸念。実証する場合は具体ツール名（Toggl + GAS / Claude Project / heroes-journal 等）+ スクショ + 数字 が必要だが、準備工数が大きく、Issyさんとして「実証ややこしいので進めない」判断。<br>
+          <strong>対応:</strong> Self-Coaching ブロックごと削除（DATA.selfCoaching + Skills セクション内のレンダリングブロック両方）。<br>
+          <strong>影響:</strong> Skills セクションは「5カテゴリスキルタグ + AI×WORK + Private Worksから独立化済み」の構成に。
+        </div>
+      </div>
       <div class="copy-note">
-        現状は3ステップ概念図のみ。実装ツール（heroes-journal / ICP Intelligence System / LS分析レポート自動化）への言及・スクショ・リンク追加検討中。<br>
-        → 次セッション対話で確定（<a href="index.html#sec-skills" style="color: var(--accent); font-weight: 700;">worksheet → 01 Skills 精査</a> 参照）。
+        <strong>将来再導入する場合の手順（参考）:</strong><br>
+        ① DATA.selfCoaching を復活（label/caption/steps/impact を再設定）<br>
+        ② Skills セクション末尾に Self-Coaching ブロックのレンダリングコードを復元（紫系グラデ・3ステップフロー）<br>
+        ③ 実証要素（実ツール名 / スクショ / 数字）を盛り込む<br>
+        参考コミット: 削除前の最終形は <code>02b91f7</code> 時点の portfolio-components.jsx
       </div>
     </div>
 
@@ -759,12 +773,13 @@
     <div class="copy-block">
       <div class="copy-note">
         <strong>2026-05-17 e4b0103:</strong> Skills 事業・グロース カテゴリ新設（プロデュースから予算/予実/事業計画引越し+新規5タグ）<br>
-        <strong>2026-05-17 02b91f7:</strong> Skills制作・演出+プロデュース統合（プロジェクトマネジメント10タグ）+ ツール・技術にGAS追加
+        <strong>2026-05-17 02b91f7:</strong> Skills制作・演出+プロデュース統合（プロジェクトマネジメント10タグ）+ ツール・技術にGAS追加<br>
+        <strong>2026-05-17（本セッション）:</strong> AI×WORKから「#自作AI資産15+」削除 + Self-Coachingブロック削除（実証困難のため非採用）
       </div>
     </div>
   </div>
   <div class="status-row">
-    <span class="badge done">✅ P1/P2 完了 · P3 のみ worksheet 残置</span>
+    <span class="badge done">✅ P1/P2/P3 全完了</span>
   </div>
 </section>
 
