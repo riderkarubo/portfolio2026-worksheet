@@ -11,3 +11,6 @@
 .omc/
 .claude/
 CLAUDE.md
+*.env
+token.json
+client_secret*
